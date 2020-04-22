@@ -19,8 +19,10 @@ import javax.persistence.Id;
 public class Usuario implements Serializable {
     
     public enum Rol {
-      ADMINISTRADOR,
-      NORMAL
+      ADMIN,
+      ALUMNO,
+      PASPDI,
+      ONG
     };
     
     private static final long serialVersionUID = 1L;
