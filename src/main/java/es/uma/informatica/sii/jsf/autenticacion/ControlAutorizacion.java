@@ -36,16 +36,16 @@ public class ControlAutorizacion implements Serializable {
 	   String cad = "login.xhtml";
 	   
    	if(usuario.getRol().equals(Usuario.Rol.ADMIN)) {
-   		cad = "normal.xhtml";
+   		cad = "inicio.xhtml";
    	
    	}else if(usuario.getRol().equals(Usuario.Rol.ALUMNO)) {
-   		cad = "normal.xhtml";
+   		cad = "inicio.xhtml";
    		
    	}else if(usuario.getRol().equals(Usuario.Rol.ONG)) {
-   		cad = "normal.xhtml";
+   		cad = "inicio.xhtml";
    		
    	}else if(usuario.getRol().equals(Usuario.Rol.PASPDI)) {
-   		cad = "normal.xhtml";
+   		cad = "inicio.xhtml";
    		
    	}
    	
