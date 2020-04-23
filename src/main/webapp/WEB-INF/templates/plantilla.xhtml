@@ -17,7 +17,54 @@
         <div id="top" class="top">
             <h:form id="menu">
                 <ul class="menulist">
+
+                    <!-- Home -->
+                    <c:if test="#{controlAutorizacion.usuario.rol != null}">
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Home"/></li>
+                    </c:if>
+
+                    <!-- Opciones de alumnos -->
+                    <c:if test="#{controlAutorizacion.usuario.rol == 'ALUMNO'}">
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Buscar actividades"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Mis actividades"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Inscripciones"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Mi perfil (alumno)"/></li>
+                    </c:if>
+
+                    <!-- Opciones de paspdi -->
+                    <c:if test="#{controlAutorizacion.usuario.rol == 'PASPDI'}">
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Buscar actividades"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Mis actividades"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Inscripciones"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Proyectos"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Solicitudes actividad"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Evaluar alumno"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Supervisiones"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Mi perfil (profesor)"/></li>
+                    </c:if>
+
+                    <!-- Opciones de ong -->
+                    <c:if test="#{controlAutorizacion.usuario.rol == 'ONG'}">
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Servicios activos"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Propuestas"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Evaluar participantes"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Valoraciones"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Mi perfil (ONG)"/></li>
+                    </c:if>
+
+                    <!-- Opciones de admin -->
+                    <c:if test="#{controlAutorizacion.usuario.rol == 'ADMIN'}">
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Actividades"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Ver usuarios"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Ver ONGs"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Proyectos"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Solicitudes servicios"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Asignaturas"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Asignar profesor"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Mi perfil (admin)"/></li>
+                    </c:if>
+
+                    <!-- Salir -->
                     <c:if test="#{controlAutorizacion.usuario != null}">
                         <li><h:commandLink action="#{controlAutorizacion.logout()}" value="Salir"/></li>
                     </c:if>
