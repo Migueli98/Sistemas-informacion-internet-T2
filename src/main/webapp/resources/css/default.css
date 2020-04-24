@@ -16,6 +16,10 @@ h1 {
     color: #D20005;
 }
 
+h2 {
+    color: white;
+}
+
 a:link, a:visited {
   color: #045491;
   font-weight : bold;
@@ -29,8 +33,33 @@ a:link:hover, a:visited:hover  {
 }
 
 .email{  
+    margin: 15px;
+    border-radius: 10px;
+    background-color: white; 
+}
+
+.login-box{
+    width: 325px;
+    height: 200px;
+    background: #036fab;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 70px;
+}
+
+.input{
+	border-style: none;
+	margin: 5px;
+	width:80%;
+}
+
+.btnIni{
     margin: 20px;
     border-radius: 10px;
-    background-color: #036fab;
-    
+    background-color: cornflowerblue;
+    color:white;
 }
+
+
+
