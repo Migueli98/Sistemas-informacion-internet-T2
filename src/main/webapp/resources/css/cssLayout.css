@@ -1,11 +1,12 @@
 
 #top {
     position: relative;
-    background-color: #036fab;
+    background-color: none;
     color: white;
     padding: 5px;
-    height: 3em;
+    height: 8em;
     margin: 0px 0px 10px 0px;
+    with: 100%;
 }
 
 #bottom {
@@ -73,4 +74,13 @@ ul.menulist li {
     margin-top:  100px;
     padding-top: 100px
   
+}
+
+#piePag {
+    position: fixed;
+    width: 100%;
+    background-color: none;
+    color: #036fab;
+    height: 4em;
+    text-align: center;
 }
