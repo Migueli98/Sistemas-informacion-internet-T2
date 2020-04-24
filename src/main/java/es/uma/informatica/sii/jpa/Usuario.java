@@ -45,10 +45,10 @@ public class Usuario implements Serializable {
 	}   
 	
 	public Usuario(Long ID, String EMAIL, String PASS, Rol R) {
-		setId(ID);
-		setEmail(EMAIL);
-		setContraseña(PASS);
-		setRol(R);
+		id=ID;
+		email=EMAIL;
+		contraseña=PASS;
+		rol = R;
 	}
 	
 	public Long getId() {

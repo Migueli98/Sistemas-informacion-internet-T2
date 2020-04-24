@@ -10,10 +10,6 @@ import es.uma.informatica.sii.jpa.Usuario;
 
 import javax.enterprise.context.SessionScoped;
 
-import static es.uma.informatica.sii.jpa.Usuario.Rol.ADMIN;
-import static es.uma.informatica.sii.jpa.Usuario.Rol.ALUMNO;
-import static es.uma.informatica.sii.jpa.Usuario.Rol.ONG;
-import static es.uma.informatica.sii.jpa.Usuario.Rol.PASPDI;
 
 import java.io.Serializable;
 import javax.faces.context.FacesContext;
@@ -22,6 +18,7 @@ import javax.faces.context.FacesContext;
 *
 * @author francis
 */
+
 @Named(value = "controlAutorizacion")
 @SessionScoped
 public class ControlAutorizacion implements Serializable {
@@ -69,5 +66,9 @@ public class ControlAutorizacion implements Serializable {
     * Creates a new instance of ControlAutorizacion
     */
    public ControlAutorizacion() {
+   }
+   
+   public String MisActividades(){
+       return "MisActividades.xhtml";
    }
 }

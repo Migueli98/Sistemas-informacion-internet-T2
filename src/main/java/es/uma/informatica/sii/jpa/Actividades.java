@@ -7,6 +7,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import es.uma.informatica.sii.jpa.Actividades.Estado;
+
 /**
  * Entity implementation class for Entity: Actividades
  *
@@ -15,8 +17,18 @@ import javax.persistence.*;
 
 public class Actividades implements Serializable {
 
+	public enum Estado {
+	      PENDIENTE,
+	      ACEPTADA,
+	      EN_CURSO,
+	      REALIZADA,
+	      RECHAZADA
+	    };
+	
 	@Id @GeneratedValue
 	private Long idActividad;
+	@Column(nullable = false)
+	private String nombreActividad;
 	@Column(nullable = false)
 	private String tipoActividad;
 	@Column(nullable = false)
@@ -24,7 +36,9 @@ public class Actividades implements Serializable {
 	private Date fechaActividad;
 	@Column(nullable = false)
 	private String lugarRealizacion;
-	private String descripcion;   
+	private String descripcion; 
+	@Enumerated(EnumType.STRING)
+	private Estado estado;
 	
 	@ManyToOne
 	@JoinColumn(name = "servicio")
@@ -33,11 +47,22 @@ public class Actividades implements Serializable {
 
 	public Actividades() {
 		super();
-	}   
+	}  
+	
+	public Actividades(Long id,String nombre, String tipo, Date fecha, String lugar, String descripcion, Estado estado) {
+		nombreActividad=nombre;
+		idActividad = id;
+		tipoActividad = tipo;
+		fechaActividad = fecha;
+		lugarRealizacion = lugar;
+		this.descripcion = descripcion;
+		this.estado=estado;
+	}
 	public String getTipoActividad() {
 		return this.tipoActividad;
 	}
 
+	
 	public void setTipoActividad(String tipoActividad) {
 		this.tipoActividad = tipoActividad;
 	}   
@@ -74,6 +99,22 @@ public class Actividades implements Serializable {
 	}
 	public void setServicio(Servicios servicio) {
 		this.servicio = servicio;
+	}
+
+	public String getNombreActividad() {
+		return nombreActividad;
+	}
+
+	public void setNombreActividad(String nombreActividad) {
+		this.nombreActividad = nombreActividad;
+	}
+
+	public Estado getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Estado estado) {
+		this.estado = estado;
 	}
    
 }

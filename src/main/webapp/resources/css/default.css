@@ -74,6 +74,23 @@ a:link:hover, a:visited:hover  {
     color:white;
 }
 
+/*Este boton para modificar*/
+.btnMod{
+    margin: 20px;
+    border-radius: 10px;
+    background-color: orange;
+    color:black;
+}
+
+
+/*Este boton para eliminar */
+.btnDel{
+	margin: 20px;
+    border-radius: 10px;
+    background-color: #D20005;
+    color:white;
+}
+
 .parrafowelcome{
 	width: 80%;
     margin: 0 auto;
