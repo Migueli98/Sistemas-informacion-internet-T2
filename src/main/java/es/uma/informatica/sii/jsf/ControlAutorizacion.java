@@ -2,15 +2,19 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.uma.informatica.sii.jsf.autenticacion;
+package es.uma.informatica.sii.jsf;
 
-import es.uma.informatica.sii.jsf.autenticacion.modelo.Usuario;
-import static es.uma.informatica.sii.jsf.autenticacion.modelo.Usuario.Rol.ADMIN;
-import static es.uma.informatica.sii.jsf.autenticacion.modelo.Usuario.Rol.ALUMNO;
-import static es.uma.informatica.sii.jsf.autenticacion.modelo.Usuario.Rol.ONG;
-import static es.uma.informatica.sii.jsf.autenticacion.modelo.Usuario.Rol.PASPDI;
 import javax.inject.Named;
+
+import es.uma.informatica.sii.jpa.Usuario;
+
 import javax.enterprise.context.SessionScoped;
+
+import static es.uma.informatica.sii.jpa.Usuario.Rol.ADMIN;
+import static es.uma.informatica.sii.jpa.Usuario.Rol.ALUMNO;
+import static es.uma.informatica.sii.jpa.Usuario.Rol.ONG;
+import static es.uma.informatica.sii.jpa.Usuario.Rol.PASPDI;
+
 import java.io.Serializable;
 import javax.faces.context.FacesContext;
 

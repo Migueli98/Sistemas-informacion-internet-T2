@@ -32,18 +32,18 @@
 
 .center_content {
     position: relative;
-    background-color: #dddddd;
+    background-color: none;
     padding: 5px;
 }
 
 .left_content {
-    background-color: #dddddd;
+    background-color: none;
     padding: 5px;
     margin-left: 170px;
 }
 
 .right_content {
-    background-color: #dddddd;
+    background-color: none;
     padding: 5px;
     margin: 0px 170px 0px 170px;
 }
@@ -77,7 +77,6 @@ ul.menulist li {
 }
 
 #piePag {
-    position: fixed;
     width: 100%;
     background-color: none;
     color: #036fab;

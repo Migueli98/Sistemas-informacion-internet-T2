@@ -8,21 +8,21 @@
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario.rol == 'ALUMNO'}">
                 <h1>Usuario Alumno</h1>
-                <p>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario.usuario}"/>!!</p>
+                <p> ¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario.usuario}"/>!!</p>
             </c:when>
             
             <c:when test="#{controlAutorizacion.usuario.rol == 'ADMIN'}">
-                <h1>Usuario admin</h1>
+                <h1>Usuario Administrador</h1>
                 <p>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario.usuario}"/>!!</p>
             </c:when>
             
             <c:when test="#{controlAutorizacion.usuario.rol == 'PASPDI'}">
-                <h1>Usuario paspdi</h1>
+                <h1>Usuario PAS/PDI</h1>
                 <p>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario.usuario}"/>!!</p>
             </c:when>
             
             <c:when test="#{controlAutorizacion.usuario.rol == 'ONG'}">
-                <h1>Usuario ong</h1>
+                <h1>Usuario ONG</h1>
                 <p>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario.usuario}"/>!!</p>
             </c:when>
             

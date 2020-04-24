@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package es.uma.informatica.sii.jsf.autenticacion;
+package es.uma.informatica.sii.jsf;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -14,13 +14,9 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import es.uma.informatica.sii.jsf.autenticacion.modelo.Usuario;
-import es.uma.informatica.sii.jsf.autenticacion.modelo.Usuario.Rol;
+import es.uma.informatica.sii.jpa.Usuario;
+import es.uma.informatica.sii.jpa.Usuario.Rol;
 
-/**
-*
-* @author francis
-*/
 @Named(value = "login")
 @RequestScoped
 public class Login {
@@ -37,10 +33,10 @@ public class Login {
     */
    public Login() {
        usuarios = new ArrayList<Usuario>();
-       usuarios.add(new Usuario("abel", "qwerty", Rol.ALUMNO));
-       usuarios.add(new Usuario("fchicano", "qwerty", Rol.ADMIN));
-       usuarios.add(new Usuario("caritas", "qwerty", Rol.ONG));
-       usuarios.add(new Usuario("enriquesoler", "qwerty", Rol.PASPDI));
+       usuarios.add(new Usuario("abel@uma.es", "qwerty", Rol.ALUMNO));
+       usuarios.add(new Usuario("fchicano@uma.es", "qwerty", Rol.ADMIN));
+       usuarios.add(new Usuario("caritas@uma.es", "qwerty", Rol.ONG));
+       usuarios.add(new Usuario("enriquesoler@uma.es", "qwerty", Rol.PASPDI));
    }
 
    public String getUsuario() {
