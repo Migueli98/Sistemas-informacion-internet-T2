@@ -62,3 +62,8 @@ ul.menulist li {
     display:inline;
     margin: 1em;
 }
+
+#login {
+    text-align: center;
+    margin: 0 auto;
+}

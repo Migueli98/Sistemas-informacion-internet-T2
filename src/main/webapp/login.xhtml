@@ -7,10 +7,13 @@
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.usuario == null}">
+            	<center>
+            
+            <!--
                 <h:form id="login">
                     <table>
                         <tr>
-                            <td>Usuario: </td>
+                            <td>Email: </td>
                             <td><h:inputText value="#{login.usuario}"/></td>
                         </tr>
                         <tr>
@@ -24,6 +27,26 @@
                         </tr>
                     </table>
                 </h:form>
+                 Opciones de paspdi -->
+                
+                
+                 <h:form class="form-box">
+                    <h2>LOGIN</h2>
+                    
+                    <div class="email">
+                        <h:inputText styleClass="email" value="#{login.usuario}"/>                       
+                    </div>                          
+                    <div class="email">
+                        <h:inputSecret styleClass="email" value="#{login.contrasenia}"/>    
+                    </div>                           
+                    <div class="boton">
+                        <h:commandButton  styleClass="btnOtro"  value="Iniciar sesión" action="#{login.autenticar()}"/>                            
+                    </div>
+                   
+                </h:form>
+                
+                </center>
+                
             </c:when>
             <c:otherwise>
                 <p>Debe salir de la aplicación si quiere entrar como otro usuario</p>
