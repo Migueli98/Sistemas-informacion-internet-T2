@@ -26,29 +26,29 @@ import javax.faces.context.FacesContext;
 @SessionScoped
 public class ControlAutorizacion implements Serializable {
 
-   private Usuario usuario;
+   private Usuario email;
 
-   public void setUsuario(Usuario usuario) {
-       this.usuario = usuario;
+   public void setEmail(Usuario usuario) {
+       this.email = usuario;
    }
 
-   public Usuario getUsuario() {
-       return usuario;
+   public Usuario getEmail() {
+       return email;
    }
 
    public String home() {
 	   String cad = "login.xhtml";
 	   
-   	if(usuario.getRol().equals(Usuario.Rol.ADMIN)) {
+   	if(email.getRol().equals(Usuario.Rol.ADMIN)) {
    		cad = "inicio.xhtml";
    	
-   	}else if(usuario.getRol().equals(Usuario.Rol.ALUMNO)) {
+   	}else if(email.getRol().equals(Usuario.Rol.ALUMNO)) {
    		cad = "inicio.xhtml";
    		
-   	}else if(usuario.getRol().equals(Usuario.Rol.ONG)) {
+   	}else if(email.getRol().equals(Usuario.Rol.ONG)) {
    		cad = "inicio.xhtml";
    		
-   	}else if(usuario.getRol().equals(Usuario.Rol.PASPDI)) {
+   	}else if(email.getRol().equals(Usuario.Rol.PASPDI)) {
    		cad = "inicio.xhtml";
    		
    	}
@@ -61,7 +61,7 @@ public class ControlAutorizacion implements Serializable {
        // Destruye la sesión (y con ello, el ámbito de este bean)
        FacesContext ctx = FacesContext.getCurrentInstance();
        ctx.getExternalContext().invalidateSession();
-       usuario = null;
+       email = null;
        return "login.xhtml";
    }
 

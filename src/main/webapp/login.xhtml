@@ -9,17 +9,17 @@
     <ui:define name="title">Autenticando</ui:define>
     <ui:define name="content">
         <c:choose>         
-            <c:when test="#{controlAutorizacion.usuario == null}">            
+            <c:when test="#{controlAutorizacion.email == null}">            
             	<center>
                  <h:form class="login-box">
               
                     <h2>LOGIN</h2>
                     
                     <div class="email">
-                        <h:inputText styleClass="input" value="#{login.usuario}" p:placeholder="Introduce email"/>                       
+                        <h:inputText styleClass="input" value="#{login.email}" p:placeholder="Introduce email"/>                       
                     </div>                          
                     <div class="email">
-                        <h:inputSecret styleClass="input" value="#{login.contrasenia}" p:placeholder="Introduce contraseña"/>    
+                        <h:inputSecret styleClass="input" value="#{login.contraseña}" p:placeholder="Introduce contraseña"/>    
                     </div>                           
                     <div class="boton">
                         <h:commandButton  styleClass="btnIni"  value="Iniciar sesión" action="#{login.autenticar()}"/>                            

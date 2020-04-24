@@ -27,12 +27,12 @@
                 <ul class="menulist">
 
                     <!-- Home -->
-                    <c:if test="#{controlAutorizacion.usuario.rol != null}">
+                    <c:if test="#{controlAutorizacion.email.rol != null}">
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Home"/></li>
                     </c:if>
 
                     <!-- Opciones de alumnos -->
-                    <c:if test="#{controlAutorizacion.usuario.rol == 'ALUMNO'}">
+                    <c:if test="#{controlAutorizacion.email.rol == 'ALUMNO'}">
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Buscar actividades"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Mis actividades"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Inscripciones"/></li>
@@ -40,7 +40,7 @@
                     </c:if>
 
                     <!-- Opciones de paspdi -->
-                    <c:if test="#{controlAutorizacion.usuario.rol == 'PASPDI'}">
+                    <c:if test="#{controlAutorizacion.email.rol == 'PASPDI'}">
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Buscar actividades"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Mis actividades"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Inscripciones"/></li>
@@ -52,7 +52,7 @@
                     </c:if>
 
                     <!-- Opciones de ong -->
-                    <c:if test="#{controlAutorizacion.usuario.rol == 'ONG'}">
+                    <c:if test="#{controlAutorizacion.email.rol == 'ONG'}">
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Servicios activos"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Propuestas"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Evaluar participantes"/></li>
@@ -61,7 +61,7 @@
                     </c:if>
 
                     <!-- Opciones de admin -->
-                    <c:if test="#{controlAutorizacion.usuario.rol == 'ADMIN'}">
+                    <c:if test="#{controlAutorizacion.email.rol == 'ADMIN'}">
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Actividades"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Ver usuarios"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Ver ONGs"/></li>
@@ -73,7 +73,7 @@
                     </c:if>
 
                     <!-- Salir -->
-                    <c:if test="#{controlAutorizacion.usuario != null}">
+                    <c:if test="#{controlAutorizacion.email != null}">
                         <li><h:commandLink action="#{controlAutorizacion.logout()}" value="Salir"/></li>
                     </c:if>
                 </ul>

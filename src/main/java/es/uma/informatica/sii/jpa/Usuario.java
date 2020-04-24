@@ -6,10 +6,13 @@ package es.uma.informatica.sii.jpa;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
 
 /**
  *
@@ -25,54 +28,76 @@ public class Usuario implements Serializable {
       ONG
     };
     
-    private static final long serialVersionUID = 1L;
-    @Id
-    private String usuario;
-    private String contrasenia;
-    @Enumerated(EnumType.STRING)
-    private Rol rol;
-    
-    public Usuario()
-    {
-        
-    }
-    
-    public Usuario (String usuario, String contrasenia, Rol rol)
-    {
-        setUsuario(usuario);
-        setContrasenia(contrasenia);
-        setRol(rol);
-    }
+    @Id @GeneratedValue
+	private Long id;
+	@Column(nullable = false)
+	private String contraseña;
+	@Column(nullable = false)
+	private String email;
+	private String Nombre;
+	private String Apellido;
+	@Enumerated(EnumType.STRING)
+	private Rol rol;
+	private static final long serialVersionUID = 1L;
 
-    public void setRol(Rol rol) {
-        this.rol = rol;
-    }
+	public Usuario() {
+		super();
+	}   
+	
+	public Usuario(Long ID, String EMAIL, String PASS, Rol R) {
+		setId(ID);
+		setEmail(EMAIL);
+		setContraseña(PASS);
+		setRol(R);
+	}
+	
+	public Long getId() {
+		return this.id;
+	}
 
-    public Rol getRol() {
-        return rol;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}   
+	public String getContraseña() {
+		return this.contraseña;
+	}
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
+	public void setContraseña(String contraseña) {
+		this.contraseña = contraseña;
+	}   
+	public String getEmail() {
+		return this.email;
+	}
 
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}   
+	public String getNombre() {
+		return this.Nombre;
+	}
 
-    public String getUsuario() {
-        return usuario;
-    }
+	public void setNombre(String Nombre) {
+		this.Nombre = Nombre;
+	}   
+	public String getApellido() {
+		return this.Apellido;
+	}
 
-    public String getContrasenia() {
-        return contrasenia;
-    }
+	public void setApellido(String Apellido) {
+		this.Apellido = Apellido;
+	}
+	public Rol getRol() {
+		return rol;
+	}
+	public void setRol(Rol rol) {
+		this.rol = rol;
+	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((usuario == null) ? 0 : usuario.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		return result;
 	}
 
@@ -85,17 +110,17 @@ public class Usuario implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Usuario other = (Usuario) obj;
-		if (usuario == null) {
-			if (other.usuario != null)
+		if (email == null) {
+			if (other.email != null)
 				return false;
-		} else if (!usuario.equals(other.usuario))
+		} else if (!email.equals(other.email))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Usuario [usuario=" + usuario + ", rol=" + rol + "]";
+		return "Usuario [usuario=" + email + ", rol=" + rol + "]";
 	}
     
     

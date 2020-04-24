@@ -65,15 +65,16 @@ ul.menulist li {
     padding-right: 10px;
 }
 
+
 #login {
     text-align: center;
     margin: 0 auto;
 }
 
 .logoUMA{
-    margin-top:  100px;
-    padding-top: 100px
-  
+    margin: 0 auto;
+    padding-top: 100px;
+    
 }
 
 #piePag {

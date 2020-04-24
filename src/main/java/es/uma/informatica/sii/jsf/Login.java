@@ -21,8 +21,8 @@ import es.uma.informatica.sii.jpa.Usuario.Rol;
 @RequestScoped
 public class Login {
 
-   private String usuario;
-   private String contrasenia;
+   private String email;
+   private String contraseña;
    private List<Usuario> usuarios;
    
    @Inject
@@ -33,33 +33,33 @@ public class Login {
     */
    public Login() {
        usuarios = new ArrayList<Usuario>();
-       usuarios.add(new Usuario("abel@uma.es", "qwerty", Rol.ALUMNO));
-       usuarios.add(new Usuario("fchicano@uma.es", "qwerty", Rol.ADMIN));
-       usuarios.add(new Usuario("caritas@uma.es", "qwerty", Rol.ONG));
-       usuarios.add(new Usuario("enriquesoler@uma.es", "qwerty", Rol.PASPDI));
+       usuarios.add(new Usuario(1L,"alu", "q", Rol.ALUMNO));
+       usuarios.add(new Usuario(2L,"ad", "q", Rol.ADMIN));
+       usuarios.add(new Usuario(3L,"ong", "q", Rol.ONG));
+       usuarios.add(new Usuario(4L,"pp", "q", Rol.PASPDI));
    }
 
-   public String getUsuario() {
-       return usuario;
+   public String getEmail() {
+       return email;
    }
 
-   public String getContrasenia() {
-       return contrasenia;
+   public String getContraseña() {
+       return contraseña;
    }
 
-   public void setUsuario(String usuario) {
-       this.usuario = usuario;
+   public void setEmail(String usuario) {
+       this.email = usuario;
    }
 
-   public void setContrasenia(String contrasenia) {
-       this.contrasenia = contrasenia;
+   public void setContraseña(String contrasenia) {
+       this.contraseña = contrasenia;
    }
 
    public String autenticar() {
        // Implementar este método
        FacesContext ctx = FacesContext.getCurrentInstance();
        
-       if(usuario == null) { //si no se introduce usuario
+       if(email == null) { //si no se introduce usuario
        	return "login.xhtml";
        }
        
@@ -72,15 +72,15 @@ public class Login {
        //recorremos la lista y comprobamos si se encuentra el usuario
        while(i.hasNext() && !esta) {
        	act = (Usuario) i.next();
-       	if(act.getUsuario().equals(usuario)) {
+       	if(act.getEmail().equals(email)) {
        		esta = true;
        	}
        }
        
        //si el usuario esta en la lista, se comprueba que su contraseña sea valida
        if(esta) {
-       	if(act.getContrasenia().equals(contrasenia)) {
-       		ctrl.setUsuario(act);
+       	if(act.getContraseña().equals(contraseña)) {
+       		ctrl.setEmail(act);
        		return ctrl.home();
        		
        	}else {//si la contraseña no es correcta, muestra error

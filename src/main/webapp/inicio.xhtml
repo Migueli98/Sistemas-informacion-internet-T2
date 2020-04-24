@@ -6,24 +6,67 @@
     <ui:define name="title">Página para el usuario normal</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ALUMNO'}">
+            <c:when test="#{controlAutorizacion.email.rol == 'ALUMNO'}">
                 <h1>Usuario Alumno</h1>
-                <p> ¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario.usuario}"/>!!</p>
+                <h3> ¡¡Bienvenido <h:outputText value="#{controlAutorizacion.email.email}"/>!!</h3>
+                
+               	<div class="ApyS">
+                <img alt="AprendizajeServicio" width="900" height="250" src="./resources/pictures/ApyS.png"/>
+                </div>
+
+	            <div class = "parrafowelcome">
+	            	Le damos la bienvenida a nuestra página web, deseando que encuentren lo que estén buscando.
+	
+					El principal objetivo es dar a conocernos, comunicar quiénes somos y qué hacemos, pudiendo encontrar de una manera ágil y directa, una amplia descripción de nuestros proyectos y ONGs.
+	 				En esta página web, también podrá interactuar con nosotros, valorando las actividades, evaluando a los participantes, proponer actividades...
+					Nosotros te damos la oportunidad de servir y a la vez aprender de lo que das. No te lo pienses más, ¡hazte voluntario!
+					
+				</div>
             </c:when>
             
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ADMIN'}">
+            <c:when test="#{controlAutorizacion.email.rol == 'ADMIN'}">
                 <h1>Usuario Administrador</h1>
-                <p>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario.usuario}"/>!!</p>
+                <h3>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.email.email}"/>!!</h3>
+                
+                
             </c:when>
             
-            <c:when test="#{controlAutorizacion.usuario.rol == 'PASPDI'}">
+            <c:when test="#{controlAutorizacion.email.rol == 'PASPDI'}">
                 <h1>Usuario PAS/PDI</h1>
-                <p>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario.usuario}"/>!!</p>
+                <h3>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.email.email}"/>!!</h3>
+                
+                <div id="top" class="top">
+               	<div class="ApyS">
+                <img alt="AprendizajeServicio" width="500" height="100" src="./resources/pictures/ApyS.png"/>
+                </div>
+	            </div>
+	            <div class = "parrafowelcome">
+	            	Le damos la bienvenida a nuestra página web, deseando que encuentren lo que estén buscando.
+	
+					El principal objetivo es dar a conocernos, comunicar quiénes somos y qué hacemos, pudiendo encontrar de una manera ágil y directa, una amplia descripción de nuestros proyectos y ONGs.
+	 				En esta página web, también podrá interactuar con nosotros, valorando las actividades, evaluando a los participantes, proponer actividades...
+					Nosotros te damos la oportunidad de servir y a la vez aprender de lo que das. No te lo pienses más, ¡hazte voluntario!
+					
+				</div>
             </c:when>
             
-            <c:when test="#{controlAutorizacion.usuario.rol == 'ONG'}">
+            <c:when test="#{controlAutorizacion.email.rol == 'ONG'}">
                 <h1>Usuario ONG</h1>
-                <p>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.usuario.usuario}"/>!!</p>
+                <h3>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.email.email}"/>!!</h3>
+                
+                <div id="top" class="top">
+               	<div class="ApyS">
+                <img alt="AprendizajeServicio" width="500" height="100" src="./resources/pictures/ApyS.png"/>
+                </div>
+	            </div>
+	            <div class = "parrafowelcome">
+	            	Le damos la bienvenida a nuestra página web, deseando que encuentren lo que estén buscando.
+	
+					El principal objetivo es dar a conocernos, comunicar quiénes somos y qué hacemos, pudiendo encontrar de una manera ágil y directa, una amplia descripción de nuestros proyectos y ONGs.
+	 				En esta página web, también podrá interactuar con nosotros, valorando las actividades, evaluando a los participantes, proponer actividades...
+					Nosotros te damos la oportunidad de servir y a la vez aprender de lo que das. No te lo pienses más, ¡hazte voluntario!
+					
+				</div>
             </c:when>
             
             <c:otherwise>
