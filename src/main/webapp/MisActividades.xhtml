@@ -10,7 +10,50 @@
 	<ui:define name="content">
         <c:choose>
         	<c:when test="#{controlAutorizacion.email.rol == 'PASPDI'}">
+        	<h1 var = "i" value="#{controladorActividades.getA}">Ver Actividad</h1>
         	<h1>Mis actividades</h1>
+        	<h:form id="ListaActividades">
+                    <table id="tablaListaActividades">
+                    	<tr>
+                        <td>Código de Actividad</td>
+                          <td><h:outputText  value="#{i.idActividad}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Nombre Actividad </td>
+
+                            <td><h:outputText  value="#{i.nombreActividad}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Fecha Inicio </td>
+                            <td><h:outputText  value="#{i.fechaActividad}"/></td>
+                        </tr>
+                        
+
+                        <tr>
+                            <td>Localización </td>
+                            <td><h:outputText  value="#{i.lugarRealizacion}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Descripción </td>
+                            <td><h:outputText  value="#{i.descripcion}"/></td>
+                        </tr>      
+                     
+                       
+                        <tr>
+                            <td>Tipo de actividad </td>
+                            <td><h:outputText  value="#{i.tipoActividad}"/></td>
+                        </tr>  
+                        
+                        <tr>
+                            <td>Estado de la actividad </td>
+                            <td><h:outputText  value="#{i.estado}"/></td>
+                        </tr>
+                                            
+                        
+                    </table>
+                </h:form>
         	</c:when>
         </c:choose>
      </ui:define>           
