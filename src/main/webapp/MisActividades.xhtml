@@ -13,7 +13,7 @@
     
         <c:when test="#{controlAutorizacion.email.rol == 'ADMIN'}">
 				
-				<h1> Actividades</h1>
+				<h1> Actividades </h1>
 				<div class="bordeTablaActividades">
                     <table id="tablaListaActividades">
                         <thead>
@@ -57,7 +57,7 @@
         	</c:when>
         	<c:when test="#{controlAutorizacion.email.rol == 'PASPDI'}">
 				
-				<h1> Mis Actividades</h1>
+				<h1> Mis Actividades </h1>
 				<div class="bordeTablaActividades">
                     <table id="tablaListaActividades">
                         <thead>
@@ -86,11 +86,9 @@
                                     <td>
                                         <h:form> <h:column> <h:commandButton styleClass="btnOtro" value ="Ver" action="#{controladorActividades.verActividades()}"  /></h:column></h:form>
                                     </td>
-                                    <td>                                     
-                                        <h:form> <h:column> <h:commandButton styleClass="btnAceptar" value="Modificar" action="#{controladorActividades.modificarActividad()}" /> </h:column> </h:form>
-                                    </td>
-                                    <td>          
-                                        <h:form> <h:column> <h:commandButton styleClass="btnCancelar" value="Borrar" action="#{controladorActividades.borrarActividad(i.idActividad)}" /> </h:column> </h:form>
+                                   
+                                     <td>
+                                        <h:form> <h:column> <h:commandButton styleClass="btnOtro" value ="Ver Informe" action="#{controladorActividades.verInforme()}"  /></h:column></h:form>
                                     </td>
                                     
                                 </tr>
