@@ -40,7 +40,7 @@ public class controladorActividades implements Serializable {
 	    	actividades = new ArrayList<>();
 	        SimpleDateFormat dateformat1 = new SimpleDateFormat("dd/MM/yyyy");
 	        actividades.add(new Actividades(1L,"Recogida Puerteña","Voluntariado",dateformat1.parse("01/05/2021"), "Puerto de la Torre","Recoger basura",Estado.ACEPTADA));
-	        actividades.add(new Actividades(2L,"Compra de comida a ancianos","Voluntariado",dateformat1.parse("05/10/2021"), "Teatinos","Ayudar ancianos Clínico",Estado.PENDIENTE));
+	        actividades.add(new Actividades(2L,"Compra de comida a ancianos","Voluntariado",dateformat1.parse("05/10/2021"), "Teatinos","Ayudar ancianos Clínico",Estado.REALIZADA));
 
 	    }
 
@@ -91,8 +91,13 @@ public class controladorActividades implements Serializable {
 	    }
 	    
 	    
+	    
 	    public String verInformeActividad() {
 	    	return "verInformeActividad.xhtml";
+	    }
+	    
+	    public String valorarActividad() {
+	    	return "valorarActividad.xhtml";
 	    }
 	
 }

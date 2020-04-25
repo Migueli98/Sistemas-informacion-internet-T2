@@ -13,7 +13,7 @@
     
         <c:when test="#{controlAutorizacion.email.rol == 'ADMIN'}">
 				
-				<h1> Actividades </h1>
+				<h1> Todas las Actividades </h1>
 				<div class="bordeTablaActividades">
                     <table id="tablaListaActividades">
                         <thead>
@@ -90,6 +90,9 @@
                                      <td>
                                         <h:form> <h:column> <h:commandButton styleClass="btnOtro" value ="Ver Informe" action="#{controladorActividades.verInforme()}"  /></h:column></h:form>
                                     </td>
+                                    <td>
+                                        <h:form> <h:column> <h:commandButton styleClass="btnOtro" value ="Valorar" action="#{controladorActividades.valorarActividad()}"  /></h:column></h:form>
+                                    </td>
                                     
                                 </tr>
                             </ui:repeat>
@@ -132,6 +135,10 @@
                                     
                                     <td>
                                         <h:form> <h:column> <h:commandButton styleClass="btnOtro" value ="Ver Informe" action="#{controladorActividades.verInforme()}"  /></h:column></h:form>
+                                    </td>
+                                    
+                                     <td>
+                                        <h:form> <h:column> <h:commandButton styleClass="btnOtro" value ="Valorar" action="#{controladorActividades.valorarActividad()}"  /></h:column></h:form>
                                     </td>
  
                                 </tr>
