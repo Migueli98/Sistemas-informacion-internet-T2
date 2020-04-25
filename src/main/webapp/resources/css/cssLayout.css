@@ -84,3 +84,36 @@ ul.menulist li {
     height: 4em;
     text-align: center;
 }
+
+
+#tablaListaActividades{
+    width: fit-content;
+    text-align: center;
+    padding-bottom: 120px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding: 20px;
+    margin: 15px;
+    background-color: white;
+    border-spacing: 0;
+    align-items: center;
+}
+th,td{
+    padding:5px;
+    border-spacing: 0;
+    border: 1px solid black;
+}
+
+
+.bordeTablaActividades th{
+    border: 1px solid black;
+    margin: auto;
+    align-items: center;
+}
+
+.bordeTablaActividades td{
+    border: 1px solid black;
+    margin: auto;
+    align-items: center;
+}
+

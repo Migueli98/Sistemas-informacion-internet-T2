@@ -33,6 +33,16 @@ public class Curriculum implements Serializable {
 		super();
 	}   
 	
+	public Curriculum(Long id, String idiomas, String eL, Date dh, List<Asignaturas> asig) {
+		this.id = id;
+		this.idiomas = idiomas;
+		this.experienciaLaboral = eL;
+		this.disponibilidadHoraria = dh;
+		this.compuestoDe = asig;
+	}
+	
+	
+	
 	public Long getId() {
 		return id;
 	}

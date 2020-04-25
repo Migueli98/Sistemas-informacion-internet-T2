@@ -34,7 +34,7 @@
                     <!-- Opciones de alumnos -->
                     <c:if test="#{controlAutorizacion.email.rol == 'ALUMNO'}">
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Buscar actividades"/></li>
-                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Mis actividades"/></li>
+                 <li><h:commandLink action="#{controlAutorizacion.MisActividades()}" value="Mis actividades"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Inscripciones"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Mi perfil (alumno)"/></li>
                     </c:if>
@@ -62,7 +62,7 @@
 
                     <!-- Opciones de admin -->
                     <c:if test="#{controlAutorizacion.email.rol == 'ADMIN'}">
-                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Actividades"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.MisActividades()}" value="Actividades"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Ver usuarios"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Ver ONGs"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Proyectos"/></li>

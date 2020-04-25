@@ -1,6 +1,8 @@
 package es.uma.informatica.sii.jpa;
 
 import es.uma.informatica.sii.jpa.Usuario;
+import es.uma.informatica.sii.jpa.Usuario.Rol;
+
 import java.lang.Integer;
 import java.util.List;
 
@@ -30,6 +32,13 @@ public class Alumno extends Usuario{
 	public Alumno() {
 		super();
 	}   
+	
+	public Alumno(Long ID, String EMAIL, String PASS, Rol R,Integer c, Integer hL) {
+		super(ID, EMAIL, PASS, R);
+		this.creditos = c;
+		this.horasLibre = hL;
+	}   
+	
 	public Integer getCreditos() {
 		return this.creditos;
 	}

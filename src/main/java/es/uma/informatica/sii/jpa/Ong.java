@@ -1,6 +1,8 @@
 package es.uma.informatica.sii.jpa;
 
 import es.uma.informatica.sii.jpa.Usuario;
+import es.uma.informatica.sii.jpa.Usuario.Rol;
+
 import java.lang.String;
 import javax.persistence.*;
 
@@ -27,6 +29,16 @@ public class Ong extends Usuario {
 	public Ong() {
 		super();
 	}   
+	
+	public Ong(Long ID, String EMAIL, String PASS, Rol R, String n, String d, String c, String p) {
+		super(ID, EMAIL, PASS, R);
+		this.nombreONG = n;
+		this.direccion = d;
+		this.ciudad = c;
+		this.pais = p;
+	}
+	
+	
 	public String getNombreONG() {
 		return this.nombreONG;
 	}

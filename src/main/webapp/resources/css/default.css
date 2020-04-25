@@ -84,7 +84,7 @@ a:link:hover, a:visited:hover  {
 
 
 /*Este boton para eliminar */
-.btnDel{
+.btnBorrar{
 	margin: 20px;
     border-radius: 10px;
     background-color: #D20005;
