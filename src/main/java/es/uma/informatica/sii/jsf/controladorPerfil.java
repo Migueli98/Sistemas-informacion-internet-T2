@@ -10,6 +10,7 @@ import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
+import es.uma.informatica.sii.jpa.Actividades;
 import es.uma.informatica.sii.jpa.Alumno;
 import es.uma.informatica.sii.jpa.Asignaturas;
 import es.uma.informatica.sii.jpa.Curriculum;
@@ -23,8 +24,10 @@ import es.uma.informatica.sii.jpa.Usuario.Rol;
 public class controladorPerfil implements Serializable{
 
 	private ArrayList<Usuario> usuarios;
-	private Alumno usuario;
-
+	private Usuario usuario;
+	
+	
+	/*
 	private ArrayList<Alumno> alumnos;
 	private Alumno alumno;
 
@@ -51,7 +54,7 @@ public class controladorPerfil implements Serializable{
 		a2.setApellido("Martos");
 		a2.setCv(cv);
 		alumnos.add(a1);
-		alumnos.add(a2);
+		//alumnos.add(a2);
 
 		profesores = new ArrayList<>();
 		profesores.add(new Profesor(4L, "pp", "q", Rol.PASPDI, "Ciencias de la Computacion"));
@@ -63,14 +66,9 @@ public class controladorPerfil implements Serializable{
 		organizaciones.add(o1);
 		organizaciones.add(o2);
 
-		usuarios = new ArrayList<Usuario>();
-		usuarios.add(new Usuario(1L, "alu", "q", Rol.ALUMNO));
-		usuarios.add(new Usuario(2L, "ad", "q", Rol.ADMIN));
-		usuarios.add(new Usuario(3L, "ong", "q", Rol.ONG));
-		usuarios.add(new Usuario(4L, "pp", "q", Rol.PASPDI));
-
 	}
-
+	*/
+	
 	public ArrayList<Usuario> getUsuarios() {
 		return usuarios;
 	}
@@ -79,70 +77,46 @@ public class controladorPerfil implements Serializable{
 		this.usuarios = usuarios;
 	}
 
-	public Alumno getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(Alumno usuario) {
+	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-
-	public ArrayList<Alumno> getAlumnos() {
-		return alumnos;
+	
+	public Usuario getBy(int id) {
+		return usuarios.get(id);
 	}
+	
+	
 
-	public void setAlumnos(ArrayList<Alumno> alumnos) {
-		this.alumnos = alumnos;
+	public Long getId() {
+		return this.usuario.getId();
 	}
-
-	public Alumno getAlumno() {
-		return alumno;
+	
+	public String getNombre() {
+		return this.usuario.getNombre();
 	}
-
-	public void setAlumno(Alumno alumno) {
-		this.alumno = alumno;
+	
+	public String getApellido() {
+		return this.usuario.getApellido();
 	}
-
-	public ArrayList<Profesor> getProfesores() {
-		return profesores;
-	}
-
-	public void setProfesores(ArrayList<Profesor> profesores) {
-		this.profesores = profesores;
-	}
-
-	public Profesor getProfesor() {
-		return profesor;
-	}
-
-	public void setProfesor(Profesor profesor) {
-		this.profesor = profesor;
-	}
-
-	public ArrayList<Ong> getOrganizaciones() {
-		return organizaciones;
-	}
-
-	public void setOrganizaciones(ArrayList<Ong> organizaciones) {
-		this.organizaciones = organizaciones;
-	}
-
-	public Ong getOrganizacion() {
-		return organizacion;
-	}
-
-	public void setOrganizacion(Ong organizacion) {
-		this.organizacion = organizacion;
-	}
-
+	
 	public String getEmail() {
 		return this.usuario.getEmail();
 	}
-
+	
+	public String getContraseña() {
+		return this.usuario.getContraseña();
+	}
+	
 	public Rol getRol() {
 		return this.usuario.getRol();
 	}
-
+	
+	
+	/*acceso paginas
 	public String miPerfilAlumno() {
 		return "miPerfilAlumno.xhtml";
 	}
@@ -157,29 +131,29 @@ public class controladorPerfil implements Serializable{
 
 	public String miPerfilAdmin() {
 		return "miPerfilAdmin.xhtml";
-	}
+	}*/
 
 	public String home() {
 		// No inicia sesion
 		String cad = null;
-		if (getEmail() == null) {
+		if (this.usuario.getEmail() == null) {
 			cad = "login.xhtml";
 		}
 		// Usuario ALUMNO
-		if (getRol().equals(Rol.ALUMNO)) {
-			cad = "miPerfilAlumno.xhtml";
+		if (this.usuario.getRol().equals(Rol.ALUMNO)) {
+			cad = "miPerfil.xhtml";
 		}
 		// USUARIO PASPDI
-		if (getRol().equals(Rol.PASPDI)) {
-			cad = "miPerfilPasPdi.xhtml";
+		if (this.usuario.getRol().equals(Rol.PASPDI)) {
+			cad = "miPerfil.xhtml";
 		}
 		// USUARIO ONG
-		if (getRol().equals(Rol.ONG)) {
-			cad = "miPerfilOng.xhtml";
+		if (this.usuario.getRol().equals(Rol.ONG)) {
+			cad = "miPerfil.xhtml";
 		}
 		// USUAIRO ADMIN
-		if (getRol().equals(Rol.ADMIN)) {
-			cad = "miPerfilAdmin.xhtml";
+		if (this.usuario.getRol().equals(Rol.ADMIN)) {
+			cad = "miPerfil.xhtml";
 		}
 		return cad;
 	}

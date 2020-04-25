@@ -33,34 +33,11 @@ public class Alumno extends Usuario{
 		super();
 	}   
 	
-	public Alumno(Long ID, String EMAIL, String PASS, Rol R,Integer c, Integer hL) {
-		super(ID, EMAIL, PASS, R);
+	public Alumno(Long ID, String EMAIL, String PASS, Rol R, String nombre, String apellido, Integer c, Integer hL) {
+		super(ID, EMAIL, PASS, R, nombre, apellido);
 		this.creditos = c;
 		this.horasLibre = hL;
-	}
-	
-	public Long id() {
-		return super.getId();
-	}
-	
-	public String contraseña() {
-		return super.getContraseña();
-	}
-	
-	public Rol rol() {
-		return super.getRol();
-	}
-	
-	public String email() {
-		return super.getEmail();
-	}
-	
-	public String apellido() {
-		return super.getApellido();
-	}
-
-	public String nombre() {
-		return super.getNombre();
+		
 	}
 	
 	public Integer getCreditos() {

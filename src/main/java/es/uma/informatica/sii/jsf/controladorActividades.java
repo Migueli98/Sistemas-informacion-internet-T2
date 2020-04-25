@@ -25,15 +25,7 @@ public class controladorActividades implements Serializable {
 	private ArrayList<Actividades> actividades;
 	private Usuario email;
 	private Actividades actividad;
-	private Actividades act = new Actividades();
-
-	    public Actividades getA() {
-	        return act;
-	    }
-
-	    public void setA(Actividades a) {
-	        this.act = a;
-	    }
+	
 
 	    public void setEmail(Usuario usuario) {
 	        this.email = usuario;
@@ -75,7 +67,6 @@ public class controladorActividades implements Serializable {
 	    }
 	    
 	    public String modificarActividad(){
-	     
 	        return "ModificarActividades.xhtml";
 	    }
 	 
@@ -98,33 +89,10 @@ public class controladorActividades implements Serializable {
 	    public void setActividad(Actividades actividad) {
 	        this.actividad = actividad;
 	    }
-	     
-	    public String home(){
-	        
-	       
-	        String cad = "login.xhtml";
-	 	   
-	       	if(email.getRol().equals(Usuario.Rol.ADMIN)) {
-	       		cad = "MisActividades.xhtml";
-	       	
-	       	}else if(email.getRol().equals(Usuario.Rol.ALUMNO)) {
-	       		cad = "MisActividades.xhtml";
-	       		
-	       	}else if(email.getRol().equals(Usuario.Rol.ONG)) {
-	       		cad = "MisActividades.xhtml";
-	       		
-	       	}else if(email.getRol().equals(Usuario.Rol.PASPDI)) {
-	       		cad = "MisActividades.xhtml";
-	       		
-	       	}
-	        return cad;
-	    }
 	    
-	    public String logout(){
-	        FacesContext ctx = FacesContext.getCurrentInstance();
-	        ctx.getExternalContext().invalidateSession();
-	        email = null;
-	        return "login.xhtml";
+	    
+	    public String verInformeActividad() {
+	    	return "verInformeActividad.xhtml";
 	    }
 	
 }

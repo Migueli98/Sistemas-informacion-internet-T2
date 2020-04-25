@@ -72,20 +72,15 @@ public class ControlAutorizacion implements Serializable {
        return "MisActividades.xhtml";
    }
    
-   public String miPerfilAlumno() {
-		return "miPerfilAlumno.xhtml";
-	}
-
-	public String miPerfilPasPdi() {
-		return "miPerfilPasPdi.xhtml";
-	}
-
-	public String miPerfilOng() {
-		return "miPerfilOng.xhtml";
-	}
-
-	public String miPerfilAdmin() {
-		return "miPerfilAdmin.xhtml";
-	}
+   public String miPerfil() {
+		return "miPerfil.xhtml";
+   }
    
+   public String proyectosAdPP() {
+	   return "ProyectosAdPasPdi.xhtml";
+   }
+   
+   public String verUsuarios() {
+	   return "verUsuariosAd.xhtml";
+   }
 }

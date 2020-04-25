@@ -36,6 +36,17 @@ public class Servicios implements Serializable {
 	public Servicios() {
 		super();
 	}   
+	
+	public Servicios(Long id, String tipo, String n, String des, Integer num, String z) {
+		codigoServicio = id;
+		tipoServicio = tipo;
+		nombre = n;
+		descripcion = des;
+		numHoras = num;
+		zona = z;
+		
+	}
+	
 	public Long getCodigoServicio() {
 		return this.codigoServicio;
 	}

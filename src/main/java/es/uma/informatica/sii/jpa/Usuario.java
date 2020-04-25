@@ -34,8 +34,8 @@ public class Usuario implements Serializable {
 	private String contraseña;
 	@Column(nullable = false)
 	private String email;
-	private String Nombre;
-	private String Apellido;
+	private String nombre;
+	private String apellido;
 	@Enumerated(EnumType.STRING)
 	private Rol rol;
 	private static final long serialVersionUID = 1L;
@@ -51,40 +51,49 @@ public class Usuario implements Serializable {
 		rol = R;
 	}
 	
+	public Usuario(Long ID, String EMAIL, String PASS, Rol R, String n, String ap) {
+		id=ID;
+		email=EMAIL;
+		contraseña=PASS;
+		rol = R;
+		nombre = n;
+		apellido = ap;
+	}
+	
 	public Long getId() {
-		return this.id;
+		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
 	}   
 	public String getContraseña() {
-		return this.contraseña;
+		return contraseña;
 	}
 
 	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
 	}   
 	public String getEmail() {
-		return this.email;
+		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
 	}   
 	public String getNombre() {
-		return this.Nombre;
+		return nombre;
 	}
 
 	public void setNombre(String Nombre) {
-		this.Nombre = Nombre;
+		this.nombre = Nombre;
 	}   
 	public String getApellido() {
-		return this.Apellido;
+		return apellido;
 	}
 
 	public void setApellido(String Apellido) {
-		this.Apellido = Apellido;
+		this.apellido = Apellido;
 	}
 	public Rol getRol() {
 		return rol;

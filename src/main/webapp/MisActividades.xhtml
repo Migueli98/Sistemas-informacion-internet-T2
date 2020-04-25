@@ -5,13 +5,59 @@
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
                 xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
                 
-                
-	<ui:define name="title">Mis Actividades</ui:define>
-	<ui:define name="content">
+            
+	<ui:define name="title">Mis actividades</ui:define>
+    <ui:define name="content">
+	
         <c:choose>
-        	<c:when test="#{controlAutorizacion.email.rol == 'PASPDI' || controlAutorizacion.email.rol == 'ADMIN'}">
+    
+        <c:when test="#{controlAutorizacion.email.rol == 'ADMIN'}">
 				
-
+				<h1> Actividades</h1>
+				<div class="bordeTablaActividades">
+                    <table id="tablaListaActividades">
+                        <thead>
+                                <tr>
+                                    <th>ID Actividad</th>
+                                    <th>Nombre Actividad</th>
+                                    <th>Fecha</th>
+                                    <th>Localización</th>
+                                    <th>Descripción</th>
+                                    <th>Tipo de Actividad</th>
+                                    <th>Estado Actividad</th>                             
+                                </tr>
+                            </thead>
+                        
+                        <tbody>
+                            <ui:repeat var = "i" value="#{controladorActividades.actividades}">
+                                <tr>                                
+                                    <td>#{i.idActividad}</td>
+                                    <td>#{i.nombreActividad}</td>
+                                    <td>#{i.fechaActividad}</td>
+                                    <td>#{i.lugarRealizacion}</td>
+                                    <td>#{i.descripcion}</td>
+                                    <td>#{i.tipoActividad}</td>
+                                    <td>#{i.estado}</td> 
+                                    
+                                    <td>
+                                        <h:form> <h:column> <h:commandButton styleClass="btnOtro" value ="Ver" action="#{controladorActividades.verActividades()}"  /></h:column></h:form>
+                                    </td>
+                                    <td>                                     
+                                        <h:form> <h:column> <h:commandButton styleClass="btnAceptar" value="Modificar" action="#{controladorActividades.modificarActividad()}" /> </h:column> </h:form>
+                                    </td>
+                                    <td>          
+                                        <h:form> <h:column> <h:commandButton styleClass="btnCancelar" value="Borrar" action="#{controladorActividades.borrarActividad(i.idActividad)}" /> </h:column> </h:form>
+                                    </td>
+                                    
+                                </tr>
+                            </ui:repeat>
+                        </tbody>
+                    </table>
+                </div>
+        	</c:when>
+        	<c:when test="#{controlAutorizacion.email.rol == 'PASPDI'}">
+				
+				<h1> Mis Actividades</h1>
 				<div class="bordeTablaActividades">
                     <table id="tablaListaActividades">
                         <thead>
@@ -56,7 +102,7 @@
         	
         	<c:when test="#{controlAutorizacion.email.rol == 'ALUMNO'}">
 				
-
+				<h1> Mis actividades </h1>
 				<div class="bordeTablaActividades">
                     <table id="tablaListaActividades">
                         <thead>
@@ -85,14 +131,18 @@
                                     <td>
                                         <h:form> <h:column> <h:commandButton styleClass="btnOtro" value ="Ver" action="#{controladorActividades.verActividades()}"  /></h:column></h:form>
                                     </td>
+                                    
+                                    <td>
+                                        <h:form> <h:column> <h:commandButton styleClass="btnOtro" value ="Ver Informe" action="#{controladorActividades.verInforme()}"  /></h:column></h:form>
+                                    </td>
  
                                 </tr>
                             </ui:repeat>
                         </tbody>
                     </table>
+          
                 </div>
         	</c:when>
-        	
         </c:choose>
      </ui:define>           
 </ui:composition>

@@ -33,10 +33,10 @@ public class Login {
     */
    public Login() {
        usuarios = new ArrayList<Usuario>();
-       usuarios.add(new Usuario(1L,"alu", "q", Rol.ALUMNO));
-       usuarios.add(new Usuario(2L,"ad", "q", Rol.ADMIN));
-       usuarios.add(new Usuario(3L,"ong", "q", Rol.ONG));
-       usuarios.add(new Usuario(4L,"pp", "q", Rol.PASPDI));
+       usuarios.add(new Usuario(1L,"alu", "q", Rol.ALUMNO, "Miguel", "Valadez"));
+       usuarios.add(new Usuario(2L,"ad", "q", Rol.ADMIN, "Francisco", "Chicano"));
+       usuarios.add(new Usuario(3L,"ong", "q", Rol.ONG, "Lorenz", "Werthmann"));
+       usuarios.add(new Usuario(4L,"pp", "q", Rol.PASPDI, "Enrique", "Soler"));
    }
 
    public String getEmail() {
