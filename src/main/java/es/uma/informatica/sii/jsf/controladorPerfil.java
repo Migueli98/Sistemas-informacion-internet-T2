@@ -131,47 +131,61 @@ public class controladorPerfil {
 	public void setOrganizacion(Ong organizacion) {
 		this.organizacion = organizacion;
 	}
-	
+
 	public String getEmail() {
 		return this.usuario.getEmail();
 	}
-	
+
 	public Rol getRol() {
 		return this.usuario.getRol();
 	}
-	
-		
-	    public String home(){
-	        //No inicia sesion
-	    	String cad = null;
-	        if(getEmail()==null){
-	            cad =  "login.xhtml";
-	        }
-	        //Usuario ALUMNO
-	        if(getRol().equals(Rol.ALUMNO)){
-	            cad = "miPerfilAlumno.xhtml";
-	        }
-	        //USUARIO PASPDI
-	        if(getRol().equals(Rol.PASPDI)){
-	            cad = "miPerfilPasPdi.xhtml";
-	        }
-	        //USUARIO ONG
-	        if(getRol().equals(Rol.ONG)){
-	            cad = "miPerfilOng.xhtml";
-	        }
-	        //USUAIRO ADMIN
-	        if(getRol().equals(Rol.ADMIN)){
-	            cad = "miPerfilAdmin.xhtml";
-	        }
-	        return cad;
-	    }
-	    public String logout(){
-	        FacesContext ctx = FacesContext.getCurrentInstance();
-	        ctx.getExternalContext().invalidateSession();
-	        usuario = null;
-	        return "login.xhtml";
-	    }
-	
-	
-	
+
+	public String miPerfilAlumno() {
+		return "miPerfilAlumno.xhtml";
+	}
+
+	public String miPerfilPasPdi() {
+		return "miPerfilPasPdi.xhtml";
+	}
+
+	public String miPerfilOng() {
+		return "miPerfilOng.xhtml";
+	}
+
+	public String miPerfilAdmin() {
+		return "miPerfilAdmin.xhtml";
+	}
+
+	public String home() {
+		// No inicia sesion
+		String cad = null;
+		if (getEmail() == null) {
+			cad = "login.xhtml";
+		}
+		// Usuario ALUMNO
+		if (getRol().equals(Rol.ALUMNO)) {
+			cad = "miPerfilAlumno.xhtml";
+		}
+		// USUARIO PASPDI
+		if (getRol().equals(Rol.PASPDI)) {
+			cad = "miPerfilPasPdi.xhtml";
+		}
+		// USUARIO ONG
+		if (getRol().equals(Rol.ONG)) {
+			cad = "miPerfilOng.xhtml";
+		}
+		// USUAIRO ADMIN
+		if (getRol().equals(Rol.ADMIN)) {
+			cad = "miPerfilAdmin.xhtml";
+		}
+		return cad;
+	}
+
+	public String logout() {
+		FacesContext ctx = FacesContext.getCurrentInstance();
+		ctx.getExternalContext().invalidateSession();
+		usuario = null;
+		return "login.xhtml";
+	}
+
 }
