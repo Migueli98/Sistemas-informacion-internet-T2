@@ -1,5 +1,6 @@
 package es.uma.informatica.sii.jsf;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import es.uma.informatica.sii.jpa.Usuario.Rol;
 
 @Named(value = "controladorPerfil")
 @SessionScoped
-public class controladorPerfil {
+public class controladorPerfil implements Serializable{
 
 	private ArrayList<Usuario> usuarios;
 	private Alumno usuario;
@@ -49,6 +50,8 @@ public class controladorPerfil {
 		a2.setNombre("Christian");
 		a2.setApellido("Martos");
 		a2.setCv(cv);
+		alumnos.add(a1);
+		alumnos.add(a2);
 
 		profesores = new ArrayList<>();
 		profesores.add(new Profesor(4L, "pp", "q", Rol.PASPDI, "Ciencias de la Computacion"));

@@ -91,6 +91,9 @@ a:link:hover, a:visited:hover  {
     color:white;
 }
 
+
+
+
 .parrafowelcome{
 	width: 80%;
     margin: 0 auto;
@@ -103,5 +106,12 @@ a:link:hover, a:visited:hover  {
 .ApyS{
 	margin: 0 auto;
 	width: 65%;
+}
+
+.email5{
+    margin: 20px;
+    border-radius: 10px;
+   color: white;
+    background-color: #EF7F1A;
 }
 
