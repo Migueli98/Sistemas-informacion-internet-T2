@@ -6,6 +6,7 @@ package es.uma.informatica.sii.jsf;
 
 import javax.inject.Named;
 
+import es.uma.informatica.sii.jpa.Alumno;
 import es.uma.informatica.sii.jpa.Usuario;
 
 import javax.enterprise.context.SessionScoped;
@@ -24,6 +25,7 @@ import javax.faces.context.FacesContext;
 public class ControlAutorizacion implements Serializable {
 
    private Usuario email;
+   private Alumno alumno;
 
    public void setEmail(Usuario usuario) {
        this.email = usuario;
@@ -31,6 +33,14 @@ public class ControlAutorizacion implements Serializable {
 
    public Usuario getEmail() {
        return email;
+   }
+   
+   public void setAlumno(Alumno al) {
+       alumno = al;
+   }
+
+   public Alumno getAlumno() {
+       return alumno;
    }
 
    public String home() {

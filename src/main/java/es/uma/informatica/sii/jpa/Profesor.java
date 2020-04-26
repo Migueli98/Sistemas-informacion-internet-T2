@@ -28,8 +28,8 @@ public class Profesor extends Usuario {
 		super();
 	}   
 	
-	public Profesor(Long ID, String EMAIL, String PASS, Rol R,String d) {
-		super(ID, EMAIL, PASS, R);
+	public Profesor(Long ID, String EMAIL, String PASS, Rol R, String n, String ap,String d) {
+		super(ID, EMAIL, PASS, R, n,ap);
 		this.departamento = d;	
 	}
 	

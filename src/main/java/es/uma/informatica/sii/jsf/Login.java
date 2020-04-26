@@ -14,6 +14,9 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import es.uma.informatica.sii.jpa.Alumno;
+import es.uma.informatica.sii.jpa.Ong;
+import es.uma.informatica.sii.jpa.Profesor;
 import es.uma.informatica.sii.jpa.Usuario;
 import es.uma.informatica.sii.jpa.Usuario.Rol;
 
@@ -24,6 +27,7 @@ public class Login {
    private String email;
    private String contraseña;
    private List<Usuario> usuarios;
+   private List<Alumno> alumnos;
    
    @Inject
    private ControlAutorizacion ctrl;
@@ -33,10 +37,14 @@ public class Login {
     */
    public Login() {
        usuarios = new ArrayList<Usuario>();
-       usuarios.add(new Usuario(1L,"alu", "q", Rol.ALUMNO, "Miguel", "Valadez"));
+       usuarios.add(new Alumno(101L,"alu", "q", Rol.ALUMNO, "Miguel", "Valadez",108,-1));
        usuarios.add(new Usuario(2L,"ad", "q", Rol.ADMIN, "Francisco", "Chicano"));
-       usuarios.add(new Usuario(3L,"ong", "q", Rol.ONG, "Lorenz", "Werthmann"));
+       usuarios.add(new Ong(3L,"ong", "q", Rol.ONG, "Caritas","C/Sin Nombre 123","Guantanamo","Republica de Misco"));
        usuarios.add(new Usuario(4L,"pp", "q", Rol.PASPDI, "Enrique", "Soler"));
+       usuarios.add(new Alumno(100L, "reshulon", "1234", Rol.ALUMNO, "Javi", "Olea", 120, 5));
+       usuarios.add(new Profesor(200L, "vega", "q", Rol.PASPDI,"Fernando","Vega", "Lenguajes y Ciencias de la Computacion"));
+       
+      
    }
 
    public String getEmail() {

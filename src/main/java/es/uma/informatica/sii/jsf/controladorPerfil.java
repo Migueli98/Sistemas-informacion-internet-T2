@@ -36,9 +36,12 @@ public class controladorPerfil implements Serializable{
 
 	private ArrayList<Ong> organizaciones;
 	private Ong organizacion;
-
+*/
 	public controladorPerfil() throws ParseException {
-
+		
+		usuarios = new ArrayList<>();
+		/*	
+  		
 		SimpleDateFormat dateformat1 = new SimpleDateFormat("dd/MM/yyyy");
 		List<Asignaturas> asigs = new ArrayList<>();
 		asigs.add(new Asignaturas(101L, 6, "Sistemas de Información en Internet"));
@@ -65,9 +68,9 @@ public class controladorPerfil implements Serializable{
 		Ong o2 = new Ong(8L, "ong1", "q", Rol.ONG, "UNICEF", "C/Misco Nº 20", "Lagos", "Nigeria");
 		organizaciones.add(o1);
 		organizaciones.add(o2);
-
+*/
 	}
-	*/
+	
 	
 	public ArrayList<Usuario> getUsuarios() {
 		return usuarios;
