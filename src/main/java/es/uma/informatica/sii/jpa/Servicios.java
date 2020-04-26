@@ -44,7 +44,6 @@ public class Servicios implements Serializable {
 		descripcion = des;
 		numHoras = num;
 		zona = z;
-		
 	}
 	
 	public Long getCodigoServicio() {

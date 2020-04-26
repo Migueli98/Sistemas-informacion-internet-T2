@@ -5,12 +5,12 @@
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
                 >
                 
-    <ui:define name="title">Ver actividad</ui:define>
+    <ui:define name="title">Modificar actividad</ui:define>
     <ui:define name="content">
         <c:choose>
             <c:when test="#{controlAutorizacion.getEmail().getRol() == 'ADMIN' || controlAutorizacion.getEmail().getRol() == 'PASPDI' || controlAutorizacion.getEmail().getRol() == 'ONG'}">
         
-                <h1 var = "i" value="#{controladorActividades.actividades}">Ver Actividad</h1>  
+                <h1 var = "i" value="#{controladorActividades.actividades}">Modificar Actividad</h1>  
                                 
                 <h:form id="ListaActividades">
                     <table id="tablaListaActividades">

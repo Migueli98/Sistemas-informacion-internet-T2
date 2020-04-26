@@ -24,19 +24,10 @@ import es.uma.informatica.sii.jpa.Usuario;
 public class controladorActividades implements Serializable {
 	
 	private ArrayList<Actividades> actividades;
-	private Usuario email;
 	private Actividades actividad;
 	private ArrayList<InformeActividades> informes;
 	private InformeActividades informe;
-	
 
-	    public void setEmail(Usuario usuario) {
-	        this.email = usuario;
-	    }
-
-	    public Usuario getEmail() {
-	        return email;
-	    }
 	    
 	   
 	    public controladorActividades() throws ParseException {
@@ -132,8 +123,6 @@ public class controladorActividades implements Serializable {
 	    public void setActividad(Actividades actividad) {
 	        this.actividad = actividad;
 	    }
-	    
-	    
 	    
 	    public String verInformeActividad() {
 	    	return "verInformeActividad.xhtml";

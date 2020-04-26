@@ -40,11 +40,10 @@ public class Login {
        usuarios.add(new Alumno(101L,"alu", "q", Rol.ALUMNO, "Miguel", "Valadez",108,-1));
        usuarios.add(new Usuario(2L,"ad", "q", Rol.ADMIN, "Francisco", "Chicano"));
        usuarios.add(new Ong(3L,"ong", "q", Rol.ONG, "Caritas","C/Sin Nombre 123","Guantanamo","Republica de Misco"));
-       usuarios.add(new Usuario(4L,"pp", "q", Rol.PASPDI, "Enrique", "Soler"));
+       usuarios.add(new Profesor(4L,"pp", "q", Rol.PASPDI, "Enrique", "Soler", "Lenguajes y Ciencias de la Computacion"));
        usuarios.add(new Alumno(100L, "reshulon", "1234", Rol.ALUMNO, "Javi", "Olea", 120, 5));
        usuarios.add(new Profesor(200L, "vega", "q", Rol.PASPDI,"Fernando","Vega", "Lenguajes y Ciencias de la Computacion"));
-       
-      
+
    }
 
    public String getEmail() {

@@ -22,7 +22,8 @@ public class Actividades implements Serializable {
 	      ACEPTADA,
 	      EN_CURSO,
 	      REALIZADA,
-	      RECHAZADA
+	      RECHAZADA,
+	      BUSCANDO_PARTICIPANTES
 	    };
 	
 	@Id @GeneratedValue
@@ -39,6 +40,7 @@ public class Actividades implements Serializable {
 	private String descripcion; 
 	@Enumerated(EnumType.STRING)
 	private Estado estado;
+
 	
 	@ManyToOne
 	@JoinColumn(name = "servicio")
@@ -58,6 +60,18 @@ public class Actividades implements Serializable {
 		this.descripcion = descripcion;
 		this.estado=estado;
 	}
+	
+	public Actividades(Long id,String nombre, String tipo, Date fecha, String lugar, String descripcion, Estado estado, Servicios s) {
+		nombreActividad=nombre;
+		idActividad = id;
+		tipoActividad = tipo;
+		fechaActividad = fecha;
+		lugarRealizacion = lugar;
+		this.descripcion = descripcion;
+		this.estado=estado;
+		servicio = s;
+	}
+	
 	public String getTipoActividad() {
 		return this.tipoActividad;
 	}

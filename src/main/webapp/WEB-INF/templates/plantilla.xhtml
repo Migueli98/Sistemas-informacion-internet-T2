@@ -33,7 +33,7 @@
 
                     <!-- Opciones de alumnos -->
                     <c:if test="#{controlAutorizacion.email.rol == 'ALUMNO'}">
-                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Buscar actividades"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.verBuscarActividades()}" value="Buscar actividades"/></li>
                  <li><h:commandLink action="#{controlAutorizacion.MisActividades()}" value="Mis actividades"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Inscripciones"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.miPerfil()}" value="Mi perfil"/></li>
@@ -41,7 +41,7 @@
 
                     <!-- Opciones de paspdi -->
                     <c:if test="#{controlAutorizacion.email.rol == 'PASPDI'}">
-                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Buscar actividades"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.verBuscarActividades()}" value="Buscar actividades"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.MisActividades()}" value="Mis actividades"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Inscripciones"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.proyectosAdPP()}" value="Proyectos"/></li>
@@ -53,8 +53,8 @@
 
                     <!-- Opciones de ong -->
                     <c:if test="#{controlAutorizacion.email.rol == 'ONG'}">
-                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Servicios activos"/></li>
-                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Propuestas"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.serviciosActivos()}" value="Servicios activos"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.propuestasOng()}" value="Propuestas"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Evaluar participantes"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Valoraciones"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.miPerfil()}" value="Mi perfil"/></li>
@@ -62,7 +62,7 @@
 
                     <!-- Opciones de admin -->
                     <c:if test="#{controlAutorizacion.email.rol == 'ADMIN'}">
-                    <li><h:commandLink action="#{controlAutorizacion.MisActividades()}" value="Actividades"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.verBuscarActividades()}" value="Actividades"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.verUsuarios()}" value="Ver usuarios"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.verOngs()}" value="ONGs"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.proyectosAdPP()}" value="Proyectos"/></li>

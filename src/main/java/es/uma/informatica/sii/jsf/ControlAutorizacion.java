@@ -97,4 +97,16 @@ public class ControlAutorizacion implements Serializable {
    public String verOngs() {
 	   return "verOngsAd.xhtml";
    }
+   
+   public String verBuscarActividades() {
+	   return "buscarActividades.xhtml";
+   }
+   
+   public String propuestasOng() {
+	   return "propuestas.xhtml";
+   }
+   
+   public String serviciosActivos() {
+	   return "";
+   }
 }

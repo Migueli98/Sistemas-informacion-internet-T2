@@ -5,46 +5,55 @@
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
                 >
                 
-    <ui:define name="title">Modificar Proyecto</ui:define>
+    <ui:define name="title">Modificar Propuesta Actividad</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getEmail().getRol() == 'ADMIN' || controlAutorizacion.getEmail().getRol() == 'PASPDI' || controlAutorizacion.getEmail().getRol() == 'ONG'}">
+            <c:when test="#{controlAutorizacion.getEmail().getRol() == 'ONG'}">
         
-                <h1 var = "i" value="#{controladorProyectosAdPasPdi.servicios}">Modificar Proyecto</h1>  
+                <h1 var = "i" value="#{controladorPropuestas.actividades}">Modificar Propuesta Actividad</h1>  
                                 
                 <h:form id="ListaActividades">
                     <table id="tablaListaActividades">
 						<tr>
-							<td>ID Proyecto</td>
-
-							<td><h:inputText value="#{i.codigoServicio}" /></td>
+							<td>ID Actividad</td>
+			
+							<td><h:inputText  value="#{i.idActividad}" /></td>
 						</tr>
 						<tr>
-                            <td>Tipo de Servicio </td>
+                            <td>Nombre Actividad </td>
 
-                            <td><h:inputText  value="#{i.tipoServicio}"/></td>
+                       
+                            <td><h:inputText  value="#{i.nombreActividad}" /></td>
                         </tr>
 
                         <tr>
-                            <td>Nombre </td>
-                            <td><h:inputText  value="#{i.nombre}"/></td>
+                            <td>Fecha </td>
+                         
+                            <td><h:inputText  value="#{i.fechaActividad}" /></td>
                         </tr>
 
                         <tr>
-                            <td>Descripción </td>
-                            <td><h:inputText  value="#{i.descripcion}"/></td>
+                            <td>Localización </td>
+                        
+                            <td><h:inputText  value="#{i.lugarRealizacion}" /></td>
                         </tr>
                         
                         <tr>
-                            <td>Numero de horas necesarias </td>
-                            <td><h:inputText  value="#{i.numHoras}"/></td>
+                            <td>Descripción </td>
+                          
+                            <td><h:inputText  value="#{i.descripcion}" /></td>
                         </tr>      
                       
                         
                         <tr>
-                            <td>Zona </td>
-                            <td><h:inputText  value="#{i.zona}"/></td>
+                            <td>Tipo de actividad </td>
+                            <td><h:inputText  value="#{i.tipoActividad}"/></td>
                         </tr>  
+                        
+                        <tr>
+                            <td>Estado de la actividad </td>
+                            <td><h:outputText  value="#{i.estado}"/></td>
+                        </tr>
                                             
                         
                     </table>
@@ -55,11 +64,11 @@
                   <br/>
 					<h:column>
 						<h:commandButton value="Guardar" styleClass="btnCancelar"
-							action="ProyectosAdPasPdi.xhtml" />
+							action="propuestas.xhtml" />
 					</h:column>
 					<h:column>
 						<h:commandButton value="Cancelar" styleClass="btnCancelar"
-							action="ProyectosAdPasPdi.xhtml" />
+							action="propuestas.xhtml" />
 					</h:column>
 
 

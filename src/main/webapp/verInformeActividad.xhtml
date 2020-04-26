@@ -2,7 +2,8 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
 
 	<ui:define name="title">Informe actividad</ui:define>
 	<ui:define name="content">
@@ -25,6 +26,21 @@
 								</tr>
 								
 								<tr>
+									<td>Nombre actividad</td>
+									<td><h:outputText value="#{j.act.nombreActividad}" /></td>
+								</tr>
+								
+								<tr>
+									<td>Tipo actividad</td>
+									<td><h:outputText value="#{j.act.tipoActividad}" /></td>
+								</tr>
+								
+								<tr>
+									<td>Descripcion</td>
+									<td><h:outputText value="#{j.act.descripcion}" /></td>
+								</tr>
+								
+								<tr>
 									<td>Profesor</td>
 
 									<td><h:outputText value="#{j.informeProfesor}" /></td>
@@ -37,7 +53,7 @@
 								
 								<tr>
 									<td>Valoracion</td>
-									<td><h:inputText value="tu valoracion" /></td>
+									<td><h:inputText value="j.act.valoracionAlumno" p:placeholder="tu valoracion..." /></td>
 								</tr>
 									
 							</table>

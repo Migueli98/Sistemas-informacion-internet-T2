@@ -5,44 +5,46 @@
                 xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
                 >
                 
-    <ui:define name="title">Modificar Ong</ui:define>
+    <ui:define name="title">Modificar Propuesta Servicio</ui:define>
     <ui:define name="content">
         <c:choose>
-            <c:when test="#{controlAutorizacion.getEmail().getRol() == 'ADMIN'}">
+            <c:when test="#{controlAutorizacion.getEmail().getRol() == 'ONG'}">
         
-                <h1 var = "i" value="#{controladorVerOng.ongs}">Modificar Ong</h1>  
+                <h1 var = "i" value="#{controladorPropuestas.servicios}">Modificar Propuesta Servicio</h1>  
                                 
                 <h:form id="ListaActividades">
                     <table id="tablaListaActividades">
 						<tr>
-							<td>IdOng</td>
+							<td>ID Proyecto</td>
 
-							<td><h:inputText value="#{i.id}" /></td>
+							<td><h:inputText value="#{i.codigoServicio}" /></td>
 						</tr>
 						<tr>
+                            <td>Tipo de Servicio </td>
+
+                            <td><h:inputText  value="#{i.tipoServicio}"/></td>
+                        </tr>
+
+                        <tr>
                             <td>Nombre </td>
-
-                            <td><h:inputText  value="#{i.nombreONG}"/></td>
+                            <td><h:inputText  value="#{i.nombre}"/></td>
                         </tr>
 
                         <tr>
-                            <td>Email </td>
-                            <td><h:inputText  value="#{i.email}"/></td>
-                        </tr>
-
-                        <tr>
-                            <td>Direccion </td>
-                            <td><h:inputText  value="#{i.direccion}"/></td>
+                            <td>Descripción </td>
+                            <td><h:inputText  value="#{i.descripcion}"/></td>
                         </tr>
                         
                         <tr>
-                            <td>Ciudad </td>
-                            <td><h:inputText  value="#{i.ciudad}"/></td>
+                            <td>Numero de horas necesarias </td>
+                            <td><h:inputText  value="#{i.numHoras}"/></td>
                         </tr>      
-						<tr>
-                            <td>Pais </td>
-                            <td><h:inputText  value="#{i.pais}"/></td>
-                        </tr> 
+                      
+                        
+                        <tr>
+                            <td>Zona </td>
+                            <td><h:inputText  value="#{i.zona}"/></td>
+                        </tr>  
                                             
                         
                     </table>
@@ -53,11 +55,11 @@
                   <br/>
 					<h:column>
 						<h:commandButton value="Guardar" styleClass="btnCancelar"
-							action="verOngsAd.xhtml" />
+							action="propuestas.xhtml" />
 					</h:column>
 					<h:column>
 						<h:commandButton value="Cancelar" styleClass="btnCancelar"
-							action="verOngsAd.xhtml" />
+							action="propuestas.xhtml" />
 					</h:column>
 
 
