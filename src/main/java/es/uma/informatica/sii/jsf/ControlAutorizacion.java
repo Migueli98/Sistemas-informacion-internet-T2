@@ -107,6 +107,6 @@ public class ControlAutorizacion implements Serializable {
    }
    
    public String serviciosActivos() {
-	   return "";
+	   return "serviciosActivos.xhtml";
    }
 }
