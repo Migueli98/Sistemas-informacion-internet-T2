@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 import javax.enterprise.context.SessionScoped;
@@ -43,6 +44,8 @@ public class controladorActividades implements Serializable {
 	private Asignaturas asignatura;
 	private ArrayList<Usuario> usuariosActividad;
 	private ArrayList<Actividades> evaluacionActividades;
+	private ArrayList<Usuario> profesores;
+	
 
 	    
 	   
@@ -54,6 +57,7 @@ public class controladorActividades implements Serializable {
             asignaturas = new ArrayList<>();
             usuarios = new ArrayList<>();
             evaluacionActividades = new ArrayList<>();
+            profesores = new ArrayList<Usuario>();
             
             Curriculum c1 = new Curriculum(1L, "Español, Inglés, Italiano", "Camarero, Enfermero, Pintor", "Lunes, Martes, Miércoles", asignaturas);
             Curriculum c2 = new Curriculum(2L, "Chino, Inglés, Italiano", "Albañil, Médico, Pintor", "Miércoles, Jueves, Viernes", asignaturas);
@@ -102,8 +106,20 @@ public class controladorActividades implements Serializable {
             Actividades a4 = new Actividades(2L,"Compra de comida a ancianos","Voluntariado",dateformat1.parse("05/10/2021"), "Teatinos","Ayudar ancianos Clínico",Estado.REALIZADA);
             evaluacionActividades.add(a3);
             evaluacionActividades.add(a4);
+            
+            Profesor p1 = new Profesor(1L, "pepe@uma.es", "q", Rol.PASPDI, "Pepe", "Torres", "Matematica Aplicada");
+            profesores.add(p1);
+            
+            actividades.add(a1);
+            actividades.add(a2);
+            actividades.add(s1);
+            
+            
 	    }
 	    
+	    public String getNombreApellido(Profesor p) {
+	    	return p.getNombre().concat(p.getApellido());
+	    }
 	    
 
 	    public ArrayList<Asignaturas> getAsignaturas() {
@@ -388,5 +404,19 @@ public class controladorActividades implements Serializable {
 		public void setEvaluacionActividades(ArrayList<Actividades> evaluacionActividades) {
 			this.evaluacionActividades = evaluacionActividades;
 		}
+
+
+
+		public ArrayList<Usuario> getProfesores() {
+			return profesores;
+		}
+
+
+
+		public void setProfesores(ArrayList<Usuario> profesores) {
+			this.profesores = profesores;
+		}
+		
+		
 	    
 }
