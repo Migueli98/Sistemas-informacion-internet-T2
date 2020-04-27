@@ -125,4 +125,8 @@ public class ControlAutorizacion implements Serializable {
    public String valoraciones() {
 	   return "valoraciones.xhtml";
    }
+   
+   public String asignaturas() {
+	   return "asignaturas.xhtml";
+   }
 }

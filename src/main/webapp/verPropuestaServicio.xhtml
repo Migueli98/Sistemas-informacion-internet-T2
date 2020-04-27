@@ -63,6 +63,69 @@
 				</h:form>
                  
             </c:when>
+            
+            <c:when test="#{controlAutorizacion.getEmail().getRol() == 'ADMIN' || controlAutorizacion.getEmail().getRol() == 'PASPDI'}">
+        
+                <h1 var = "i" value="#{controladorPropuestas.servicios}">Ver Propuesta Servicio</h1>  
+                                
+                <h:form id="ListaActividades">
+                    <table id="tablaListaActividades">
+						<tr>
+							<td>ID Proyecto</td>
+
+							<td><h:outputText value="#{i.codigoServicio}" /></td>
+						</tr>
+						<tr>
+                            <td>Tipo de Servicio </td>
+
+                            <td><h:outputText  value="#{i.tipoServicio}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Nombre </td>
+                            <td><h:outputText  value="#{i.nombre}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Descripción </td>
+                            <td><h:outputText  value="#{i.descripcion}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Numero de horas necesarias </td>
+                            <td><h:outputText  value="#{i.numHoras}"/></td>
+                        </tr>      
+                      
+                        
+                        <tr>
+                            <td>Zona </td>
+                            <td><h:outputText  value="#{i.zona}"/></td>
+                        </tr>  
+                                            
+                        
+                    </table>
+                </h:form>
+                    <h:form>
+                    <h:column>
+                    
+						<h:commandButton value="Aceptar Solicitud" styleClass="btnCrear" action="propuestas.xhtml" />
+                        <h:commandButton styleClass="btnBorrar" value="Rechazar Solicitud" action="propuestas.xhtml" /> 
+						
+					</h:column>
+                    </h:form>
+                <h:form> 
+                    
+                
+					<h:column>
+						<h:commandButton value="Volver" styleClass="btnVolver"
+							action="propuestas.xhtml" />
+					</h:column>
+					
+
+
+				</h:form>
+                 
+            </c:when>
                
        
             <c:otherwise>
