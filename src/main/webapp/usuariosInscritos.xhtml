@@ -10,44 +10,30 @@
         <c:choose>
             <c:when test="#{controlAutorizacion.getEmail().getRol() == 'ONG' || controlAutorizacion.getEmail().getRol() == 'PASPDI'}">
         
-                <h1 var = "j" value="#{controladorActividades.usuarios}">Usuarios Inscritos</h1>  
+                <h1 var = "i" value="#{controladorActividades.usuariosActividad}">Usuarios Inscritos</h1>  
                                 
-                <h:form id="ListaActividades">
+                 <div class="bordeTablaActividades">
                     <table id="tablaListaActividades">
-						<tr>
-							<td>Nombre</td>
-
-							<td><h:outputText value="#{j.nombre}" /></td>
-						</tr>
-						<tr>
-                            <td>Apellido</td>
-
-                            <td><h:outputText  value="#{j.apellido}"/></td>
-                        </tr>
-						<!--  
-                       <tr>
-                            <td>Idiomas</td>
-
-                            <td><h:outputText  value="#{i.cv.idiomas}"/></td>
-                        </tr>
-                                            
-                        <tr>
-                            <td>Experiencia</td>
-
-                            <td><h:outputText  value="#{i.cv.experienciaLaboral}"/></td>
-                        </tr>
+                        <thead>
+                                <tr>
+                                        <th>Nombre</th>
+                                        <th>Apellido</th>     
+                                        <th>Email</th>           
+                                </tr>
+                            </thead>
                         
-                        <tr>
-                            <td>Disponibilidad</td>
-
-                            <td><h:outputText  value="#{i.cv.disponibilidadHoraria}"/></td>
-                        </tr>
-                        -->
-      
-                        
-                        
+                        <tbody>
+                          <ui:repeat var = "i" value="#{controladorActividades.usuariosActividad}">
+                                <tr>                                
+                                    <td>#{i.nombre}</td>
+                                    <td>#{i.apellido}</td>
+                                    <td>#{i.email}</td>                
+                                </tr>
+                            </ui:repeat>
+                        </tbody>
                     </table>
-                </h:form>
+       
+                </div>
                     
                 <h:form> 
                     
