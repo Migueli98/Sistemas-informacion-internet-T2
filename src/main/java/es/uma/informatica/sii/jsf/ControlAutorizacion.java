@@ -109,4 +109,14 @@ public class ControlAutorizacion implements Serializable {
    public String serviciosActivos() {
 	   return "serviciosActivos.xhtml";
    }
+   
+   public String inscripcionActividad() {
+	   return "inscripcionActividad.xhtml";
+   }
+   
+   public String supervisionActividad() {
+	   return "supervisionActividad.xhtml";
+   }
+   
+   
 }

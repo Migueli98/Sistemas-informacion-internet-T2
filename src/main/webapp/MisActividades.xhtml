@@ -39,21 +39,20 @@
                                     <td>#{i.estado}</td> 
                                     
                                     <td>
-                                        <h:form> <h:column> <h:commandButton styleClass="btnOtro" value ="Ver" action="#{controladorActividades.verActividades()}"  /></h:column></h:form>
+                                        <h:form> <h:column> <h:commandButton styleClass="btnVer" value ="Ver" action="#{controladorActividades.verActividades()}"  /></h:column></h:form>
                                     </td>
                                    
-                                
-                                    <td>
-                                        <h:form> <h:column> <h:commandButton styleClass="btnOtro" value ="Valorar" action="#{controladorActividades.verInformeActividad()}"  /></h:column></h:form>
-                                    </td>
-                                    
-                                </tr>
+									<td>
+									<h:form>
+											<h:commandButton styleClass="btnVer" value="Ver Informe"
+												action="#{controladorActividades.verInformeActividad(i.idActividad)}" />
+									</h:form>
+									</td>
+								</tr>
                             </ui:repeat>
                         </tbody>
                     </table>
-                    <h:form>
-                    <h:commandButton styleClass="btnOtro" value ="Ver Informes" action="#{controladorActividades.verInformeActividad()}"  />
-					</h:form>                
+                                 
                 </div>
         	</c:when>
         	

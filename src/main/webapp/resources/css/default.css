@@ -99,10 +99,58 @@ a:link:hover, a:visited:hover  {
 .btnBorrar{
 	margin: 20px;
     border-radius: 10px;
-    background-color: #D20005;
+    background-color: red;
     color:white;
 }
 
+.btnCancelar{
+	margin: 20px;
+    border-radius: 10px;
+    background-color: red;
+    color:white;
+}
+
+.btnVer{
+	margin: 20px;
+    border-radius: 10px;
+    background-color: #0080ff;
+    color:white;
+}
+
+.btnVolver{
+	margin: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color:black;
+}
+
+.btnModificar{
+	margin: 20px;
+    border-radius: 10px;
+    background-color: orange;
+    color:white;
+}
+
+.btnCrear{
+	margin: 20px;
+    border-radius: 10px;
+    background-color: green;
+    color:white;
+}
+
+.btnGuardar{
+	margin: 20px;
+    border-radius: 10px;
+    background-color: green;
+    color:white;
+}
+
+.btnGuardar{
+	margin: 20px;
+    border-radius: 10px;
+    background-color: yellow;
+    color:black;
+}
 
 
 

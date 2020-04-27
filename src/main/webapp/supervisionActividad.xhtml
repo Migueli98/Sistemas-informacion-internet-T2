@@ -6,15 +6,14 @@
                 xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
                 
             
-	<ui:define name="title">Actividades</ui:define>
+	<ui:define name="title">Supervisiones</ui:define>
     <ui:define name="content">
 	
         <c:choose>
-        	<c:when test="#{controlAutorizacion.getEmail().getRol() == 'ONG'}">
-
-				<h1> Actividades del Servicio Activo </h1>
-                
-                <div class="bordeTablaActividades">
+        	<c:when test="#{controlAutorizacion.email.rol == 'ONG' || controlAutorizacion.email.rol == 'PASPDI'}">
+				
+				<h1>Supervisiones</h1>
+				<div class="bordeTablaActividades">
                     <table id="tablaListaActividades">
                         <thead>
                                 <tr>
@@ -29,7 +28,7 @@
                             </thead>
                         
                         <tbody>
-                          <ui:repeat var = "i" value="#{controladorServiciosActivos.actividades}">
+                            <ui:repeat var = "i" value="#{controladorActividades.supervisiones}">
                                 <tr>                                
                                     <td>#{i.idActividad}</td>
                                     <td>#{i.nombreActividad}</td>
@@ -39,29 +38,18 @@
                                     <td>#{i.tipoActividad}</td>
                                     <td>#{i.estado}</td> 
                                     
-                                    
-                                   <td>
-                                        <h:form> <h:column> <h:commandButton styleClass="btnVer" value ="Ver" action="#{controladorServiciosActivos.verActividadesServicios()}"  /></h:column></h:form>
-                                    </td>                          
-                                </tr>
+                                    <td>
+                                        <h:form> <h:column> <h:commandButton styleClass="btnVer" value ="Ver Participantes" action="#{controladorActividades.usuariosInscritos()}"  /></h:column></h:form>
+                                    </td>
+                               
+								</tr>
                             </ui:repeat>
                         </tbody>
                     </table>
-                    
-                    <h:form> 
-                    
-						<h:column>
-							<h:commandButton value="Volver" styleClass="btnVolver"
-								action="serviciosActivos.xhtml" />
-						</h:column>
-					
-
-
-					</h:form>
-                    
+                                 
                 </div>
-                
         	</c:when>
+        	
         	
         </c:choose>
      </ui:define>           

@@ -14,7 +14,7 @@
 				
 				<h1 var="i" value="#{controladorActividades.actividades}">Informes Actividad</h1>
 				<!--  <h1 var="j" value= "#{controladorActividades.informes}"></h1>-->
-				<ui:repeat var="j" value= "#{controladorActividades.informes}">
+				<ui:repeat var="j" value= "#{controladorActividades.informe}">
 				
 				
 
@@ -57,7 +57,11 @@
 								</tr>
 									
 							</table>
-							<h:form> <h:commandButton styleClass="btnOtro" value ="Guardar" action="#{controladorActividades.guardarValoracion()}"  /></h:form>
+							
+							
+							 <h:commandButton styleClass="btnGuardar" value ="Guardar" action="#{controladorActividades.guardarValoracion()}"  />
+							 <h:commandButton styleClass="btnVolver" value ="Volver" action="#{controladorActividades.guardarValoracion()}"  />
+							
 						</h:form>
 				
 				

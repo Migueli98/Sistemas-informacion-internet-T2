@@ -23,12 +23,12 @@
                                  </tr>
                                    <tr>
                                         <th>Email </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.email}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.email}"/></td>
                                         
                                  </tr>
                                    <tr>
                                         <th>Contraseña </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.contraseña}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.contraseña}"/></td>
                                         
                                  </tr>
                                    <tr>
@@ -38,23 +38,23 @@
                                  </tr>
                                    <tr>
                                         <th>Apellido </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.apellido}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.apellido}"/></td>
                                         
                                  </tr>
                                    <tr>
                                         <th>Nombre </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.nombre}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.nombre}"/></td>
                                         
                                  </tr>
                                  <tr>
                                         <th>Creditos</th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.creditos}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.creditos}"/></td>
                                         
                                  </tr>
                                  
                                  <tr>
                                         <th>Horas Libre</th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.horasLibre}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.horasLibre}"/></td>
                                         
                                  </tr>
                                  
@@ -65,8 +65,9 @@
                        
                   
                 <h:form>            
-                    <h:commandButton styleClass="btnModificar"  value="Modificar perfil" action="modificarPerfil.xhtml" />
-          			<h:commandButton styleClass="btnVer"  value="Preferencias de búsqueda de actividades" action="preferenciasActividades.xhtml" />
+                    <h:commandButton styleClass="btnGuardar"  value="Guardar" action="miPerfil.xhtml" />
+                    <h:commandButton styleClass="btnVolver"  value="Volver" action="miPerfil.xhtml" />
+                    
           			
                 </h:form>
                
@@ -84,7 +85,7 @@
                                  </tr>
                                    <tr>
                                         <th>Email </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.email}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.email}"/></td>
                                         
                                  </tr>
                                    
@@ -95,17 +96,17 @@
                                  </tr>
                                    <tr>
                                         <th>Nombre </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.nombre}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.nombre}"/></td>
                                         
                                  </tr>
                                    <tr>
                                         <th>Apellido </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.apellido}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.apellido}"/></td>
                                         
                                  </tr>
                                  <tr>
                                         <th>Departamento</th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.departamento}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.departamento}"/></td>
                                         
                                  </tr>
 
@@ -115,9 +116,8 @@
                        
                   
                 <h:form>            
-                    <h:commandButton styleClass="btnModificar"  value="Modificar perfil" action="modificarPerfil.xhtml" />
-          			<h:commandButton styleClass="btnVer"  value="Preferencias de búsqueda de actividades" action="preferenciasActividades.xhtml" />
-          			
+  					 <h:commandButton styleClass="btnGuardar"  value="Guardar" action="miPerfil.xhtml" />
+                    <h:commandButton styleClass="btnVolver"  value="Volver" action="miPerfil.xhtml" />          			
                 </h:form>
                
             </c:when> 
@@ -134,7 +134,7 @@
                                  </tr>
                                    <tr>
                                         <th>Email </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.email}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.email}"/></td>
                                         
                                  </tr>
                                    
@@ -145,12 +145,12 @@
                                  </tr>
                                    <tr>
                                         <th>Nombre </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.nombre}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.nombre}"/></td>
                                         
                                  </tr>
                                    <tr>
                                         <th>Apellido </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.apellido}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.apellido}"/></td>
                                         
                                  </tr>
                                  
@@ -161,8 +161,8 @@
                        
                   
                 <h:form>            
-                    <h:commandButton styleClass="btnModificar"  value="Modificar perfil" action="modificarPerfil.xhtml" />
-          			
+					   <h:commandButton styleClass="btnGuardar"  value="Guardar" action="miPerfil.xhtml" />
+                    <h:commandButton styleClass="btnVolver"  value="Volver" action="miPerfil.xhtml" />          			
                 </h:form>
                
             </c:when>
@@ -179,7 +179,7 @@
                                  </tr>
                                    <tr>
                                         <th>Email </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.email}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.email}"/></td>
                                         
                                  </tr>
                                    
@@ -190,22 +190,22 @@
                                  </tr>
                                    <tr>
                                         <th>Nombre </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.nombreONG}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.nombreONG}"/></td>
                                         
                                  </tr>
                                    <tr>
                                         <th>Direccion </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.direccion}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.direccion}"/></td>
                                         
                                  </tr>
                                  <tr>
                                         <th>Ciudad </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.ciudad}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.ciudad}"/></td>
                                         
                                  </tr>
                                  <tr>
                                         <th>Pais </th>
-                                        <td><h:outputText  value="#{controlAutorizacion.email.pais}"/></td>
+                                        <td><h:inputText  value="#{controlAutorizacion.email.pais}"/></td>
                                         
                                  </tr>
                                  
@@ -216,8 +216,8 @@
                        
                   
                 <h:form>            
-                    <h:commandButton styleClass="btnModificar"  value="Modificar perfil" action="modificarPerfil.xhtml" />
-          			
+				    <h:commandButton styleClass="btnGuardar"  value="Guardar" action="miPerfil.xhtml" />
+                    <h:commandButton styleClass="btnVolver"  value="Volver" action="miPerfil.xhtml" />          			
                 </h:form>
                
             </c:when>

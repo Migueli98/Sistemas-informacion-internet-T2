@@ -39,13 +39,13 @@
                                     
                                     
                                     <td>
-                                        <h:form> <h:column> <h:commandButton styleClass="btnOtro" value ="Ver" action="#{controladorVerOng.verOng()}"  /></h:column></h:form>
+                                        <h:form> <h:column> <h:commandButton styleClass="btnVer" value ="Ver" action="#{controladorVerOng.verOng()}"  /></h:column></h:form>
                                     </td>
                                     <td>                                     
-                                        <h:form> <h:column> <h:commandButton styleClass="btnAceptar" value="Modificar" action="#{controladorVerOng.modificarOng()}" /> </h:column> </h:form>
+                                        <h:form> <h:column> <h:commandButton styleClass="btnModificar" value="Modificar" action="#{controladorVerOng.modificarOng()}" /> </h:column> </h:form>
                                     </td>
                                     <td>          
-                                        <h:form> <h:column> <h:commandButton styleClass="btnCancelar" value="Borrar" action="#{controladorVerOng.borrarOng(i.id)}" /> </h:column> </h:form>
+                                        <h:form> <h:column> <h:commandButton styleClass="btnBorrar" value="Borrar" action="#{controladorVerOng.borrarOng(i.id)}" /> </h:column> </h:form>
                                     </td>
                                     
                                 </tr>
@@ -53,7 +53,7 @@
                         </tbody>
                     </table>
                     
-                    <h:form> <h:column> <h:commandButton styleClass="btnModificar" value="Crear" action="#{controladorVerOng.crearOngAd()}" /> </h:column> </h:form>
+                    <h:form> <h:column> <h:commandButton styleClass="btnCrear" value="Crear" action="#{controladorVerOng.crearOngAd()}" /> </h:column> </h:form>
                 </div>
         	</c:when>
         	

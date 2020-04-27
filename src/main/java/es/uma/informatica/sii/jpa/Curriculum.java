@@ -22,8 +22,7 @@ public class Curriculum implements Serializable {
 	@Column(nullable = false)
 	private String experienciaLaboral;
 	@Column(nullable = false)
-	@Temporal(TemporalType.DATE)
-	private Date disponibilidadHoraria;
+	private String disponibilidadHoraria;
 	private static final long serialVersionUID = 1L;
 
 	@ManyToMany
@@ -33,7 +32,7 @@ public class Curriculum implements Serializable {
 		super();
 	}   
 	
-	public Curriculum(Long id, String idiomas, String eL, Date dh, List<Asignaturas> asig) {
+	public Curriculum(Long id, String idiomas, String eL, String dh, List<Asignaturas> asig) {
 		this.id = id;
 		this.idiomas = idiomas;
 		this.experienciaLaboral = eL;
@@ -65,11 +64,11 @@ public class Curriculum implements Serializable {
 	public void setExperienciaLaboral(String experienciaLaboral) {
 		this.experienciaLaboral = experienciaLaboral;
 	}   
-	public Date getDisponibilidadHoraria() {
+	public String getDisponibilidadHoraria() {
 		return this.disponibilidadHoraria;
 	}
 
-	public void setDisponibilidadHoraria(Date disponibilidadHoraria) {
+	public void setDisponibilidadHoraria(String disponibilidadHoraria) {
 		this.disponibilidadHoraria = disponibilidadHoraria;
 	}
 

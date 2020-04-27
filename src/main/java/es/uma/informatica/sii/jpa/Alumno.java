@@ -40,6 +40,13 @@ public class Alumno extends Usuario{
 		
 	}
 	
+	public Alumno(Long ID, String EMAIL, String PASS, Rol R, String nombre, String apellido, Integer c, Integer hL, Curriculum cv) {
+		super(ID, EMAIL, PASS, R, nombre, apellido);
+		this.creditos = c;
+		this.horasLibre = hL;
+		this.cv = cv;
+	}
+	
 	public Integer getCreditos() {
 		return this.creditos;
 	}

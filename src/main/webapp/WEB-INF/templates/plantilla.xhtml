@@ -35,7 +35,7 @@
                     <c:if test="#{controlAutorizacion.email.rol == 'ALUMNO'}">
                     <li><h:commandLink action="#{controlAutorizacion.verBuscarActividades()}" value="Buscar actividades"/></li>
                  <li><h:commandLink action="#{controlAutorizacion.MisActividades()}" value="Mis actividades"/></li>
-                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Inscripciones"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.inscripcionActividad()}" value="Inscripciones"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.miPerfil()}" value="Mi perfil"/></li>
                     </c:if>
 
@@ -43,11 +43,11 @@
                     <c:if test="#{controlAutorizacion.email.rol == 'PASPDI'}">
                     <li><h:commandLink action="#{controlAutorizacion.verBuscarActividades()}" value="Buscar actividades"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.MisActividades()}" value="Mis actividades"/></li>
-                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Inscripciones"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.inscripcionActividad()}" value="Inscripciones"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.proyectosAdPP()}" value="Proyectos"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Solicitudes actividad"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Evaluar alumno"/></li>
-                    <li><h:commandLink action="#{controlAutorizacion.home()}" value="Supervisiones"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.supervisionActividad()}" value="Supervisiones"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.miPerfil()}" value="Mi perfil"/></li>
                     </c:if>
 
@@ -57,6 +57,7 @@
                     <li><h:commandLink action="#{controlAutorizacion.propuestasOng()}" value="Propuestas"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Evaluar participantes"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.home()}" value="Valoraciones"/></li>
+                    <li><h:commandLink action="#{controlAutorizacion.supervisionActividad()}" value="Supervisiones"/></li>
                     <li><h:commandLink action="#{controlAutorizacion.miPerfil()}" value="Mi perfil"/></li>
                     </c:if>
 
