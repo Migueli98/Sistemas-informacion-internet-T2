@@ -42,6 +42,7 @@ public class controladorActividades implements Serializable {
 	private ArrayList<Asignaturas> asignaturas;
 	private Asignaturas asignatura;
 	private ArrayList<Usuario> usuariosActividad;
+	private ArrayList<Actividades> evaluacionActividades;
 
 	    
 	   
@@ -52,18 +53,19 @@ public class controladorActividades implements Serializable {
             supervisiones = new ArrayList<>();
             asignaturas = new ArrayList<>();
             usuarios = new ArrayList<>();
+            evaluacionActividades = new ArrayList<>();
             
             Curriculum c1 = new Curriculum(1L, "Español, Inglés, Italiano", "Camarero, Enfermero, Pintor", "Lunes, Martes, Miércoles", asignaturas);
             Curriculum c2 = new Curriculum(2L, "Chino, Inglés, Italiano", "Albañil, Médico, Pintor", "Miércoles, Jueves, Viernes", asignaturas);
             Alumno alu1 = new Alumno(100L, "javiolea@uma.es", "q", Rol.ALUMNO, "Javi", "Olea", 120, 5, c1);
-            Alumno alu2 = new Alumno(101L,"miguelvaldez@uma.es", "q", Rol.ALUMNO, "Miguel", "Valadez",108,-1, c2);
-            Alumno alu3 = new Alumno(101L,"miguelvaldez@uma.es", "q", Rol.ALUMNO, "Marta", "Romero",30,5);
+            Alumno alu2 = new Alumno(101L,"miguelvaldez@uma.es", "q", Rol.ALUMNO, "Miguel", "Valadez",108,3, c2);
+            Alumno alu3 = new Alumno(102L,"marta@uma.es", "q", Rol.ALUMNO, "Marta", "Romero",30,5, c1);
             usuarios.add(alu1);
             usuarios.add(alu2);
             usuarios.add(alu3);
             SimpleDateFormat dateformat1 = new SimpleDateFormat("dd/MM/yyyy");
-            Actividades a1 = new Actividades(1L,"Recogida Puerteña","Voluntariado",dateformat1.parse("01/05/2021"), "Puerto de la Torre","Recoger basura",Estado.ACEPTADA);
-            Actividades a2 = new Actividades(2L,"Compra de comida a ancianos","Voluntariado",dateformat1.parse("05/10/2021"), "Teatinos","Ayudar ancianos Clínico",Estado.REALIZADA);
+            Actividades a1 = new Actividades(1L,"Recogida Puerteña","Voluntariado",dateformat1.parse("01/05/2021"), "Puerto de la Torre","Recoger basura",Estado.BUSCANDO_PARTICIPANTES);
+            Actividades a2 = new Actividades(2L,"Compra de comida a ancianos","Voluntariado",dateformat1.parse("05/10/2021"), "Teatinos","Ayudar ancianos Clínico",Estado.BUSCANDO_PARTICIPANTES);
             actividades.add(a1);
             actividades.add(a2);
             InformeActividades ia1 = new InformeActividades(1L,"Fernando Vega", "Save The Children", a1);
@@ -96,7 +98,10 @@ public class controladorActividades implements Serializable {
             asignaturas.add(aa3);
             asignaturas.add(aa4);
 
- 
+            Actividades a3 = new Actividades(1L,"Recogida Puerteña","Voluntariado",dateformat1.parse("01/05/2021"), "Puerto de la Torre","Recoger basura",Estado.EN_CURSO);
+            Actividades a4 = new Actividades(2L,"Compra de comida a ancianos","Voluntariado",dateformat1.parse("05/10/2021"), "Teatinos","Ayudar ancianos Clínico",Estado.REALIZADA);
+            evaluacionActividades.add(a3);
+            evaluacionActividades.add(a4);
 	    }
 	    
 	    
@@ -213,12 +218,7 @@ public class controladorActividades implements Serializable {
 		public void setInformes(ArrayList<InformeActividades> informes) {
 			this.informes = informes;
 		}
-		
-		/*public Actividades getAct(ArrayList<InformeActividades> informes) {
-			
-		}
-		*/
-		
+
 		public String igual (Long i, Long a) {
 			if (i == a) {
 				return "si";
@@ -316,6 +316,11 @@ public class controladorActividades implements Serializable {
 	    	return "supervisionActividad.xhtml";
 	    }
 	    
+	    /*public String usuariosInscritos(Long idAct) {
+	    	return "usuariosInscritos.xhtml";
+	    }*/
+	    
+
 	    public String usuariosInscritos(Long idAct) {
 	    	usuariosActividad = new ArrayList<Usuario>();
 	    	Iterator<InformeActividades> i = informes.iterator();
@@ -329,7 +334,38 @@ public class controladorActividades implements Serializable {
 	    	return "usuariosInscritos.xhtml";
 	    }
 
+	    
+	    public String borrarUsuarioInscrito(int id){
+	    	boolean encontrado =  false;
+	    	int cont = 0;
+	    	while(!encontrado) {
+	    		Usuario ac = usuariosActividad.get(cont);
+	    		if(ac.getId() == (id)) {
+	    			usuariosActividad.remove(cont);
+	    			encontrado = true;
+	    		}
+	    		cont++;
+	    	}
+	        return "usuariosInscritos.xhtml";
+	    }
 
+	    
+	    public String evaluarUsuarioActividad(Long idAct) {
+	    	usuariosActividad = new ArrayList<Usuario>();
+	    	Iterator<InformeActividades> i = informes.iterator();
+	    	boolean encontrado = false;
+	    	while (i.hasNext() && !encontrado) {
+	    		InformeActividades iA = i.next();
+	    		if (iA.getAct().getIdActividad()==idAct) {
+	    			usuariosActividad.add(iA.getAlumn());
+	    		}
+	    	}
+	    	return "evaluarUsuarioActividad.xhtml";
+	    }
+	    
+	    public String evaluarParticipante() {
+	    	return "evaluarParticipante.xhtml";
+	    }
 
 		public ArrayList<Usuario> getUsuariosActividad() {
 			return usuariosActividad;
@@ -340,7 +376,17 @@ public class controladorActividades implements Serializable {
 		public void setUsuariosActividad(ArrayList<Usuario> usuariosActividad) {
 			this.usuariosActividad = usuariosActividad;
 		}
-	
-	    
+
+
+
+		public ArrayList<Actividades> getEvaluacionActividades() {
+			return evaluacionActividades;
+		}
+
+
+
+		public void setEvaluacionActividades(ArrayList<Actividades> evaluacionActividades) {
+			this.evaluacionActividades = evaluacionActividades;
+		}
 	    
 }

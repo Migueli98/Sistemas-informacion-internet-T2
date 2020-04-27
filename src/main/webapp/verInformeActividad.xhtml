@@ -12,8 +12,7 @@
 				test="#{controlAutorizacion.getEmail().getRol() == 'PASPDI' || controlAutorizacion.getEmail().getRol() == 'ALUMNO'}">
 				
 				
-				<h1 var="i" value="#{controladorActividades.actividades}">Informes Actividad</h1>
-				<!--  <h1 var="j" value= "#{controladorActividades.informes}"></h1>-->
+				<h1>Informes Actividad</h1>
 				<ui:repeat var="j" value= "#{controladorActividades.informe}">
 				
 				
@@ -63,59 +62,7 @@
 							 <h:commandButton styleClass="btnVolver" value ="Volver" action="#{controladorActividades.guardarValoracion()}"  />
 							
 						</h:form>
-				
-				
-				
-				
-				<!-- 
-				<c:choose>
-					
-					
-					
-					 
-					<c:when test="#{controladorActividades.igual(i.idActividad,j.act.idActividad)}">
-						<h:form id="ListaActividades">
-							<table id="tablaListaActividades">
-								<tr>
-									<td>ID Informe Actividad</td>
-									<td><h:outputText value="#{j.idInforme}" /></td>
-								</tr>
-								<tr>
-									<td>Profesor</td>
 
-									<td><h:outputText value="#{j.informeProfesor}" /></td>
-								</tr>
-
-								<tr>
-									<td>ONG</td>
-									<td><h:outputText value="#{j.informeONG}" /></td>
-								</tr>
-							</table>
-						</h:form>
-
-						<h:form>
-
-							<br />
-							<h:column>
-								<h:commandButton value="Volver Atrás" styleClass="btnCancelar"
-									action="MisActividades.xhtml" />
-							</h:column>
-
-						</h:form>
-					</c:when>
-					
-					
-					<c:otherwise>
-						<p>No existe informe para esta actividad</p>
-						<h:outputText value = "#{i.idActividad}"/>
-						<p>***</p>
-						<h:outputText value = "#{j.act.idActividad}"/>
-						
-						
-					
-					</c:otherwise>
-				</c:choose>
-				-->
 
 				</ui:repeat>
 

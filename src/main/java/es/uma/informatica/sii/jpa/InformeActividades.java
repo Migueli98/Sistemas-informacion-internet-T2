@@ -15,7 +15,6 @@ public class InformeActividades implements Serializable {
 
 	@Id @GeneratedValue
 	private Long idInforme;
-	@Column(nullable = false)
 	private String informeProfesor;
 	private String informeONG;
 	private String valoracionAlumno;
@@ -43,6 +42,12 @@ public class InformeActividades implements Serializable {
         idInforme = id;
         informeProfesor = ip;
         informeONG = io;
+        act = a;
+    }
+	
+	public InformeActividades(Long id, String val, Actividades a) {
+        idInforme = id;
+        valoracionAlumno = val;
         act = a;
     }
 	

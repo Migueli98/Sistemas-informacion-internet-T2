@@ -18,7 +18,10 @@
                                 <tr>
                                         <th>Nombre</th>
                                         <th>Apellido</th>     
-                                        <th>Email</th>           
+                                        <th>Email</th>   
+                                        <th>Idiomas</th> 
+                                        <th>Experiencia Laboral</th> 
+                                        <th>Disponibilidad</th>         
                                 </tr>
                             </thead>
                         
@@ -27,8 +30,20 @@
                                 <tr>                                
                                     <td>#{i.nombre}</td>
                                     <td>#{i.apellido}</td>
-                                    <td>#{i.email}</td>                
+                                    <td>#{i.email}</td>
+                                    <td>#{i.cv.idiomas}</td>
+                                    <td>#{i.cv.experienciaLaboral}</td>
+                                    <td>#{i.cv.disponibilidadHoraria}</td>
+                                    
+                                    <td>
+                                <h:form> <h:column> <h:commandButton styleClass="btnGuardar" value ="Aceptar participante" action="supervisionActividad.xhtml"  /></h:column></h:form>
+                              </td>
+                               <td>
+                                <h:form> <h:column> <h:commandButton styleClass="btnCancelar" value ="Eliminar participante" action="#{controladorActividades.borrarUsuarioInscrito(i.id)}"  /></h:column></h:form>
+                              </td>
                                 </tr>
+                                
+       
                             </ui:repeat>
                         </tbody>
                     </table>
