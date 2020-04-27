@@ -63,7 +63,65 @@
                  
             </c:when>
                
-       
+       		<c:when test="#{controlAutorizacion.getEmail().getRol() == 'ADMIN' || controlAutorizacion.getEmail().getRol() == 'PASPDI'}">
+        
+                <h1 var = "i" value="#{controladorPropuestas.actividades}">Ver Propuesta Actividad</h1>  
+                                
+                <h:form id="ListaActividades">
+                    <table id="tablaListaActividades">
+						<tr>
+							<td>ID Actividad</td>
+
+							<td><h:outputText value="#{i.idActividad}" /></td>
+						</tr>
+						<tr>
+                            <td>Nombre Actividad </td>
+
+                            <td><h:outputText  value="#{i.nombreActividad}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Fecha </td>
+                            <td><h:outputText  value="#{i.fechaActividad}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Localización </td>
+                            <td><h:outputText  value="#{i.lugarRealizacion}"/></td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Descripción </td>
+                            <td><h:outputText  value="#{i.descripcion}"/></td>
+                        </tr>      
+                      
+                        
+                        <tr>
+                            <td>Tipo de actividad </td>
+                            <td><h:outputText  value="#{i.tipoActividad}"/></td>
+                        </tr>  
+                        
+                        <tr>
+                            <td>Estado de la actividad </td>
+                            <td><h:outputText  value="#{i.estado}"/></td>
+                        </tr>
+                                            
+                        
+                    </table>
+                </h:form>
+                <h:form> 
+                    
+                    <h:column> <h:commandButton value="Aceptar"   styleClass="btnCrear"  action="propuestas.xhtml" /> </h:column> 
+                 
+                </h:form>    
+                <h:form> 
+                    
+                    <h:column> <h:commandButton value="Volver"   styleClass="btnVolver"  action="propuestas.xhtml" /> </h:column> 
+                 
+                </h:form>
+                 
+            </c:when>
+       		
             <c:otherwise>
                 <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
             </c:otherwise>
