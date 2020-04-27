@@ -10,7 +10,7 @@
     <ui:define name="content">
         <c:choose>         
             <c:when test="#{controlAutorizacion.email == null}">            
-            	<center>
+            	
                  <h:form class="login-box">
               
                     <h2>LOGIN</h2>
@@ -24,10 +24,17 @@
                     <div class="boton">
                         <h:commandButton  styleClass="btnIni"  value="Iniciar sesión" action="#{login.autenticar()}"/>                            
                     </div>
+                    
+                    
                    
                 </h:form>
+                <p></p>
+                 <h3>#UMAdondetúestés</h3>
+                <p></p>
                 
-                </center>
+                <img alt="Bienvenida" width="900" height="400" src="./resources/pictures/fotoGuapa.png"/>
+               
+               
                 
             </c:when>
             <c:otherwise>

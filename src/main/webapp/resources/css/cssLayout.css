@@ -81,7 +81,7 @@ ul.menulist li {
     width: 100%;
     background-color: none;
     color: #036fab;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 100%;
     height: 4em;
@@ -103,10 +103,18 @@ ul.menulist li {
     border-spacing: 0;
     align-items: center;
 }
-th,td{
+td{
     padding:5px;
     border-spacing: 0;
     border: 1px solid black;
+    
+}
+
+th{
+    padding:5px;
+    border-spacing: 0;
+    border: 1px solid black;
+    background-color: #84cdf9;
 }
 
 

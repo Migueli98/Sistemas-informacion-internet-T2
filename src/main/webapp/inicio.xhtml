@@ -10,9 +10,9 @@
                 <h1>Usuario Alumno</h1>
                 <h3> ¡¡Bienvenido <h:outputText value="#{controlAutorizacion.email.email}"/>!!</h3>
                 
-               	<div class="ApyS">
+               	
                 <img alt="AprendizajeServicio" width="900" height="250" src="./resources/pictures/ApyS.png"/>
-                </div>
+                
 
 	            <div class = "parrafowelcome">
 	            	Le damos la bienvenida a nuestra página web, deseando que encuentren lo que estén buscando.
@@ -27,9 +27,10 @@
             <c:when test="#{controlAutorizacion.email.rol == 'ADMIN'}">
                 <h1>Usuario Administrador</h1>
                 <h3>LOGRO DESBLOQUEADO: ¡Has desbloqueado el control de esta aplicación!</h3>
-                <div class="ApyS">
+                
                 <img alt="Adminjeje" width="900" height="350" src="./resources/pictures/adminjeje.jpg"/>
-                </div>
+                
+                
                 <div class = "parrafowelcome">
 					Se buen administrador y no caigas en manos de la inconsistencia de datos :)
 
@@ -39,9 +40,9 @@
             <c:when test="#{controlAutorizacion.email.rol == 'PASPDI'}">
                 <h1>Usuario PAS/PDI</h1>
                 <h3>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.email.email}"/>!!</h3>
-                <div class="ApyS">
+                
                 <img alt="AprendizajeServicio" width="900" height="250" src="./resources/pictures/ApyS.png"/>
-                </div>
+               
 
 	            <div class = "parrafowelcome">
 	            	Le damos la bienvenida a nuestra página web, deseando que encuentren lo que estén buscando.
@@ -56,9 +57,9 @@
             <c:when test="#{controlAutorizacion.email.rol == 'ONG'}">
                 <h1>Usuario ONG</h1>
                 <h3>¡¡Bienvenido <h:outputText value="#{controlAutorizacion.email.email}"/>!!</h3>
-                <div class="ApyS">
+                
                 <img alt="AprendizajeServicio" width="900" height="250" src="./resources/pictures/ApyS.png"/>
-                </div>
+               
 
 	            <div class = "parrafowelcome">
 	            	Le damos la bienvenida a nuestra página web, deseando que encuentren lo que estén buscando.
