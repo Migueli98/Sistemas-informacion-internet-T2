@@ -104,7 +104,7 @@ public class controladorPropuestas implements Serializable{
     public String modificarPropuestaServicio(){
         return "modificarPropuestaServicio.xhtml";
     }
-    
+    //s
     //VER
     public String verPropuestaActividad(){
        return "verPropuestaActividad.xhtml";
